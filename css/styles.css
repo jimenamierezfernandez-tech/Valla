@@ -1,0 +1,725 @@
+:root{
+  --black:#0b0b0b;
+  --white:#ffffff;
+  --text:#111;
+  --gray-2:#e3e3e3;
+  --gray-3:#bdbdbd;
+
+  --container:980px;
+  --shadow: 0 6px 18px rgba(0,0,0,.18);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,.12);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:#fff;
+}
+
+.wrap{
+  width:min(var(--container), calc(100% - 48px));
+  margin:0 auto;
+}
+
+/* =========================
+   HEADER (Logo integrado y flush-left)
+   ========================= */
+.site-header{
+  background:#0b0b0b;           /* igual que el fondo del PNG */
+  color:#fff;
+  overflow:hidden;              /* recorta cualquier micro-overlap */
+}
+
+/* Grid: logo (auto) + contenido (1fr) */
+.header-grid{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  align-items:center;
+  gap: 18px;
+}
+
+/* Logo pegado al borde izquierdo */
+.brand--flush{
+  display:block;
+  margin:0;
+  padding:0;
+}
+
+/* Logo en tamaño original (NO forzamos height) */
+.brand-logo{
+  display:block;            /* evita “líneas” por baseline */
+  width:auto;
+  height:auto;
+  max-width:none;           /* no lo “aprietes” sin querer */
+  image-rendering:auto;
+}
+
+/* Contenido del header alineado al contenedor */
+.header-content{
+  width:min(980px, calc(100% - 48px));
+  margin:0 auto;
+  padding:18px 0;           /* altura del header como el ejemplo */
+  display:flex;
+  justify-content:flex-end;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:26px;
+  padding:0;
+  margin:0;
+  align-items:center;
+  white-space:nowrap;
+  font-size:12px;
+  font-weight:650;
+  opacity:.95;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+}
+.nav-links a:hover{
+  text-decoration:underline;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  background:transparent;
+  border:0;
+  padding:8px;
+  cursor:pointer;
+  color:#fff;
+}
+.hamburger .bars{
+  width:22px;
+  height:14px;
+  display:grid;
+  gap:3px;
+}
+.hamburger .bars span{
+  display:block;
+  height:2px;
+  background:#fff;
+  border-radius:2px;
+}
+
+/* Mobile nav */
+.mobile-nav{
+  display:none;
+  padding: 0 0 14px;
+}
+.mobile-nav a{
+  display:block;
+  padding:10px 0;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  text-decoration:none;
+  font-weight:650;
+  font-size:13px;
+}
+.mobile-nav.show{ display:block; }
+
+/* =========================
+   RESPONSIVE HEADER
+   ========================= */
+@media (max-width: 920px){
+  .header-content{
+    width: min(980px, calc(100% - 32px));
+  }
+  .nav-links{ gap:16px; }
+}
+
+/* En mobile ocultamos links y mostramos hamburger */
+@media (max-width: 640px){
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+.nav-links li{
+  transition: all .25s ease;
+}
+
+.nav-links li:hover{
+  transform: scale(1.15);
+}
+
+.nav-links li:hover a{
+  color:#bfbfbf;
+}
+
+/* =========================
+   SEARCH + TITLES
+   ========================= */
+.search-row{
+  padding:16px 0 12px;
+}
+
+.search{
+  background:var(--gray-3);
+  border-radius:4px;
+  height:20px;
+  width:100%;
+  max-width:780px;
+  position:relative;
+  opacity:.92;
+}
+.search::before{
+  content:"🔍";
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:12px;
+  opacity:.8;
+}
+.search span{
+  position:absolute;
+  left:32px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:11px;
+  color:#2c2c2c;
+  opacity:.85;
+  user-select:none;
+}
+
+.section-title{
+  font-size:14px;
+  margin:14px 0 14px;
+  font-weight:800;
+}
+
+/* =========================
+   CALENDAR
+   ========================= */
+.calendar{
+  border:1px solid #9c9c9c;
+  border-radius:10px;
+  overflow:hidden;
+  width:min(580px, 100%);
+  margin:16px auto 26px;
+  background:#fff;
+}
+.cal-header{
+  background:var(--gray-2);
+  padding:7px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  font-weight:750;
+  font-size:9px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+.cal-header .arrow{
+  position:absolute;
+  right:10px;
+  font-size:12px;
+  opacity:.9;
+}
+.cal-weekdays{
+  display:grid;
+  grid-template-columns:repeat(7, 1fr);
+  background:#efefef;
+  border-top:1px solid #aaa;
+  border-bottom:1px solid #aaa;
+  font-size:8px;
+  padding:6px 10px;
+  text-align:center;
+  color:#111;
+}
+.cal-grid{
+  display:grid;
+  grid-template-columns:repeat(7, 1fr);
+  padding:12px 10px 14px;
+  gap:10px 0;
+  font-size:8px;
+  text-align:center;
+  min-height:180px;
+}
+.day{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:18px;
+  color:#111;
+}
+.day.muted{ color:#aaa; }
+.day.selected{
+  background:#0b0b0b;
+  color:#fff;
+  border-radius:999px;
+  width:44px;
+  margin:0 auto;
+  height:12px;
+  line-height:12px;
+  font-size:7px;
+  padding-top:1px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.35);
+}
+
+/* =========================
+   EVENTS
+   ========================= */
+.events-title{
+  margin:10px 0 10px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.events-strip{
+  background:#0b0b0b;
+  border-radius:10px;
+  padding:18px 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+
+.card{
+  color:#fff;
+  background:#101010;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.thumb{
+  position:relative;
+  aspect-ratio: 16 / 10;
+  background:#222;
+  overflow:hidden;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(1.05) contrast(1.05);
+  transform: scale(1.02);
+}
+.thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  pointer-events:none;
+}
+
+.card-body{
+  padding:10px 10px 12px;
+}
+.card h4{
+  margin:0 0 4px;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.2px;
+}
+.card p{
+  margin:0;
+  font-size:8px;
+  color:#d6d6d6;
+  line-height:1.35;
+}
+.meta{
+  margin-top:6px;
+  font-size:7px;
+  color:#a8a8a8;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 920px){
+  .wrap{ width: min(var(--container), calc(100% - 32px)); }
+  .nav-links{ gap:16px; }
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px){
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+
+  /* Cards en carrusel horizontal en móvil */
+  .cards{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    padding-bottom:6px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .card{
+    min-width: 72%;
+    scroll-snap-align:start;
+  }
+}
+
+@media (max-width: 420px){
+  .brand-logo{ height:42px; }
+  .card{ min-width: 82%; }
+}
+
+
+
+
+
+
+
+.where{
+  background:#dcdcdc;
+  padding:50px 0 80px;
+}
+
+.where-title{
+  font-size:26px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+/* buscador */
+.where-search{
+  background:#9c9c9c;
+  height:38px;
+  border-radius:12px;
+  margin-bottom:30px;
+  position:relative;
+}
+
+.where-search::before{
+  content:"🔍";
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:14px;
+}
+
+.where-search span{
+  position:absolute;
+  left:40px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:13px;
+}
+
+/* artistas */
+.artists{
+  display:flex;              /* 🔥 carrusel base */
+  gap:40px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
+}
+
+.artists{
+  scrollbar-width:none;
+}
+
+.artists::-webkit-scrollbar{
+  display:none;
+}
+
+.artist{
+  min-width:220px;
+  text-align:center;
+  scroll-snap-align:center;
+}
+
+.artist img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:14px;
+}
+
+.artist h4{
+  font-size:16px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.artist p{
+  font-size:11px;
+  line-height:1.5;
+  color:#333;
+}
+
+.where{
+  background:#fff; /* ✅ ahora blanco */
+  padding:50px 0 80px;
+}
+
+.where-title{
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.where-search{
+  background:#9e9e9e;
+  height:36px;
+  border-radius:10px;
+  position:relative;
+  margin-bottom:24px;
+}
+
+/* lupa */
+.where-search::before{
+  content:"🔍";
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:14px;
+}
+
+/* texto */
+.where-search span{
+  position:absolute;
+  left:34px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:13px;
+  color:#333;
+}
+
+.where-map{
+  width:100%;
+  height:260px;
+  background:#cfcfcf;
+  border-radius:20px;
+
+  /* textura tipo mapa (simulada) */
+  background-image: linear-gradient(45deg, #e7e7e7 25%, transparent 25%),
+                    linear-gradient(-45deg, #e7e7e7 25%, transparent 25%);
+  background-size:40px 40px;
+  background-position:0 0, 20px 20px;
+
+  margin-bottom:30px;
+}
+
+.where-map{
+  width:100%;
+  height:300px;
+  border-radius:24px;
+  overflow:hidden;
+  margin-bottom:40px;
+  background:#cfcfcf;
+}
+
+.where-map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  filter: grayscale(1) contrast(1.1); /* 🔥 estilo igual al mock */
+}
+
+.artists-title{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.artists{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:30px;
+  text-align:center;
+}
+
+.artist img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+.artist h4{
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.artist p{
+  font-size:10px;
+  color:#333;
+  line-height:1.4;
+}
+
+.artist{
+  transition: transform .3s ease;
+}
+
+.artist:hover{
+  transform: translateY(-6px);
+}
+
+.artist img{
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.artist:hover img{
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+@keyframes shine{
+  0%{
+    transform: translateX(-120%);
+    opacity:0;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    transform: translateX(120%);
+    opacity:0;
+  }
+}
+
+/* contenedor relativo */
+.brand{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+
+@keyframes shine{
+  0%{
+    transform: translateX(-120%);
+    opacity:0;
+  }
+  30%{
+    opacity:1;
+  }
+  100%{
+    transform: translateX(120%);
+    opacity:0;
+  }
+}
+
+.brand{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+
+/* brillo */
+.brand::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-60%;
+
+  width:60%;
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.7),
+    transparent
+  );
+
+  animation: shine 1.2s ease-out forwards;
+}
+
+@media (max-width: 900px){
+  .artists{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width: 500px){
+  .artists{
+    grid-template-columns:1fr;
+  }
+}
+
+/* =========================
+   SEPARADOR (línea con círculo)
+========================= */
+.footer-separator{
+  position:relative;
+  width:100%;
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* línea */
+.footer-separator .line{
+  width:200px;
+  height:2px;
+  background:#1a1a1a;
+}
+
+/* círculo */
+.footer-separator .circle{
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:2px solid #1a1a1a;
+  border-radius:50%;
+  background:#fff;
+}
+
+/* =========================
+   FOOTER NEGRO
+========================= */
+.site-footer{
+  background:#0b0b0b;
+  height:180px;
+  position:relative;
+  overflow:hidden; /* 🔥 esto recorta el PNG */
+}
+
+/* imagen decorativa */
+.footer-art{
+  position:absolute;
+
+  bottom:0;
+  right:0;
+
+  transform: scale(1.5);        /* 🔥 escala que pediste */
+  transform-origin: bottom right; /* 🔥 clave: crece desde la esquina */
+
+  width:auto;
+  height:auto;
+}
+
+.footer-art{
+  position:absolute;
+  bottom:0;
+  right:-40px;
+
+  transform: scale(1.5);
+  transform-origin: bottom right;
+}
