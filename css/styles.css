@@ -143,11 +143,13 @@ body{
   font-size:13px;
 }
 .mobile-nav.show{ display:block; }
+/* display: block;: Por defecto, los enlaces (<a>) son elementos inline (se ponen uno al lado del otro). Al cambiarlo a block (bloque), obligás a que cada link ocupe todo el ancho disponible de la pantalla */
 
 /* =========================
    RESPONSIVE HEADER
    ========================= */
 @media (max-width: 920px){
+  /* Esto es como darle una orden condicional al navegador: "Si la pantalla mide $920$ píxeles de ancho o menos (como una tablet o una compu chiquita), activá estas reglas. Si es más grande, ignoralas" */
   .header-content{
     width: min(980px, calc(100% - 32px));
   }
@@ -156,6 +158,7 @@ body{
 
 /* En mobile ocultamos links y mostramos hamburger */
 @media (max-width: 640px){
+  /* Esta regla se activa únicamente en pantallas que miden $640$ píxeles o menos (el tamaño típico de un celular) */
   .nav-links{ display:none; }
   .hamburger{ display:block; }
 }
@@ -163,15 +166,15 @@ body{
 .nav-links li{
   transition: all .25s ease;
 }
-
+/*  Por defecto, los cambios en CSS son instantáneos y bruscos. Al poner esta línea, le decís al navegador: "Cualquier cambio de estilo que sufra este elemento (tamaño, color, etc.), hacelo en forma de animación suave que dure $0.25$ segundos" */
 .nav-links li:hover{
   transform: scale(1.15);
 }
-
+/* Cuando el usuario pasa el mouse sobre un elemento de la lista (li), este se agranda un $15\%$ (1.15). Gracias a la transición que esta arriba */
 .nav-links li:hover a{
   color:#bfbfbf;
 }
-
+/* Al mismo tiempo que el texto se agranda, el color de la letra del link (<a>) cambia de gris a un blanco puro */
 /* =========================
    SEARCH + TITLES
    ========================= */
