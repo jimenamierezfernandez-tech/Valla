@@ -125,58 +125,60 @@
 
         <h3 class="seccion-eventos">Eventos que te podrían interesar</h3>
 
-        <section class="events-strip" aria-label="Eventos">
-          <div class="cards">
-            <article class="card">
-              <div class="thumb">
+        <section class="tarjetas-eventos" aria-label="Eventos">
+          <div class="tarjetas">
+            <article class="tarjeta">
+              <!-- Le dice a los buscadores que cada show es un elemento independiente que se entiende por sí mismo y que podría ser compartido de forma aislada en cualquier otra parte de la web -->
+              <div class="miniaturas">
                 <img src="img/dreamtheater.jpg"
                   alt="Escenario de recital con luces y público"
-                  loading="lazy"
-                />
+                  loading="lazy"/>
+                  <!-- para optimizar la velocidad de la página. Le dice al navegador: "No te gastes en descargar esta imagen si el usuario todavía no hizo scroll hasta acá abajo" -->
               </div>
-              <div class="card-body">
+              <div class="cuerpo-tarjeta">
                 <h4>Dream Theater</h4>
                 <p>24 de abril • 9 pm</p>
                 <div class="meta">Teatro / Rock</div>
+                <!-- Se usa para agrupar las etiquetas de género o tipo de evento ( "Teatro / Rock" o "Cuarteto / Vivo") -->
               </div>
             </article>
 
-            <article class="card">
-              <div class="thumb">
+            <article class="tarjeta">
+              <div class="miniaturas">
                 <img src="img/qlocura.png"
                   alt="Micrófono en primer plano con luces de escenario"
                   loading="lazy"
                 />
               </div>
-              <div class="card-body">
+              <div class="cuerpo-tarjeta">
                 <h4>Q’ LOKURA</h4>
                 <p>25 de abril • 9 pm</p>
                 <div class="meta">Cuarteto / Vivo</div>
               </div>
             </article>
 
-            <article class="card">
-              <div class="thumb">
+            <article class="tarjeta">
+              <div class="miniaturas">
                 <img src="img/calamaro.jpg"
                   alt="Guitarra eléctrica en concierto con luces azules"
                   loading="lazy"
                 />
               </div>
-              <div class="card-body">
+              <div class="cuerpo-tarjeta">
                 <h4>Calamaro</h4>
                 <p>26 de mayo • 9 pm</p>
                 <div class="meta">Recital / Tour</div>
               </div>
             </article>
 
-            <article class="card">
-              <div class="thumb">
+            <article class="tarjeta">
+              <div class="miniaturas">
                 <img src="img/soda.webp"
                   alt="Público levantando manos en festival"
                   loading="lazy"
                 />
               </div>
-              <div class="card-body">
+              <div class="cuerpo-tarjeta">
                 <h4>Soda Stereo</h4>
                 <p>12 de agosto • 9 pm</p>
                 <div class="meta">Homenaje / Tributo</div>
@@ -188,8 +190,8 @@
       </div>
     </section>
   </main>
-
-  <script>
+<!-- esto es javascript!! -->
+  <script> 
     const btn = document.getElementById('btnMenu');
     const mobileNav = document.getElementById('mobileNav');
 

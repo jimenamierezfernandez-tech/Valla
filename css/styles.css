@@ -322,20 +322,20 @@ body{
   font-weight:800;
 }
 
-.events-strip{
+.tarjetas-eventos{
   background:#0b0b0b;
   border-radius:10px;
   padding:18px 16px;
   box-shadow: var(--shadow-soft);
 }
 
-.cards{
+.tarjetas{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
   gap:16px;
 }
-
-.card{
+/* Usa CSS Grid para dividir el espacio en 4 columnas iguales y separarlas por 16px */
+.tarjeta{
   color:#fff;
   background:#101010;
   border-radius:10px;
@@ -348,29 +348,33 @@ body{
   box-shadow: var(--shadow);
 }
 
-.thumb{
+.miniaturas{
   position:relative;
   aspect-ratio: 16 / 10;
+  /* Le dice al navegador que la foto tiene que mantener siempre una proporción de tipo panorámica. No importa si la pantalla se achica, la imagen nunca se va a estirar ni a deformar */
   background:#222;
   overflow:hidden;
 }
-.thumb img{
+.miniaturas img{
   width:100%;
   height:100%;
   object-fit:cover;
+  /* Fuerza a la imagen a rellenar todo el espacio de la caja recortando los sobrantes */
   display:block;
   filter:saturate(1.05) contrast(1.05);
+  /*  Le sube un 5% la saturación y el contraste a las imágenes */
   transform: scale(1.02);
 }
-.thumb::after{
+.miniaturas::after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  /* Creas un elemento fantasma por encima de la foto que es un degradado que va desde un negro semi-transparente abajo */
   pointer-events:none;
 }
 
-.card-body{
+.cuerpo-tarjeta{
   padding:10px 10px 12px;
 }
 .card h4{
@@ -397,18 +401,19 @@ body{
 @media (max-width: 920px){
   .wrap{ width: min(var(--container), calc(100% - 32px)); }
   .nav-links{ gap:16px; }
-  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .tarjetas{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px){
   .nav-links{ display:none; }
-  .hamburger{ display:block; }
+  .menu-hamburguesa{ display:block; }
 
   /* Cards en carrusel horizontal en móvil */
-  .cards{
+  .tarjetas{
     display:flex;
     gap:12px;
     overflow-x:auto;
+    /* permite hacer scroll hacia el costado */
     padding-bottom:6px;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
@@ -420,8 +425,8 @@ body{
 }
 
 @media (max-width: 420px){
-  .brand-logo{ height:42px; }
-  .card{ min-width: 82%; }
+  .logo{ height:42px; }
+  .tarjeta{ min-width: 82%; }
 }
 
 
