@@ -596,9 +596,9 @@ body{
 }
 
 /* =========================
-   SEPARADOR (línea con círculo)
+carrusel
 ========================= */
-.footer-separator{
+.carrusel{
   position:relative;
   width:100%;
   height:80px;
@@ -608,14 +608,14 @@ body{
 }
 
 /* línea */
-.footer-separator .line{
+.carrusel .linea{
   width:200px;
   height:2px;
   background:#1a1a1a;
 }
 
 /* círculo */
-.footer-separator .circle{
+.carrusel .circulo{
   position:absolute;
   width:14px;
   height:14px;
@@ -624,10 +624,8 @@ body{
   background:#fff;
 }
 
-/* =========================
-   FOOTER NEGRO
-========================= */
-.site-footer{
+
+.footer{
   background:#0b0b0b;
   height:180px;
   position:relative;
