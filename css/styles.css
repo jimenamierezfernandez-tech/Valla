@@ -318,53 +318,52 @@ body{
    ========================= */
 .seccion-eventos {
   margin: 14px 0 14px;
-  font-size: 14px; /* Subido para que matchee con el título del calendario */
+  font-size: 14px;
   font-weight: 800;
+  color: #000;
 }
 
 /* El contenedor negro grande de fondo */
-.events-strip {
+.tarjetas-eventos {
   background: #0b0b0b;
   border-radius: 10px;
   padding: 18px 16px;
   box-shadow: var(--shadow-soft);
 }
 
-/* La grilla que alinea las 4 tarjetas */
-.cards {
+/* La grilla de 4 columnas para computadora */
+.tarjetas {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
 /* La tarjeta individual */
-.card {
+.tarjeta {
   color: #fff;
   background: #101010;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset;
-  
-  /* IMPORTANTE: Activamos la transición y la manito del cursor acá */
-  cursor: pointer;
+  cursor: pointer; /* Devuelve la manito del mouse */
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
-/* El efecto cuando pasás el mouse por encima de la tarjeta */
-.card:hover {
+/* El efecto flotante al pasar el mouse */
+.tarjeta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra más pesada al flotar */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 /* Contenedor de la foto */
-.thumb {
+.miniaturas {
   position: relative;
   aspect-ratio: 16 / 10;
   background: #222;
   overflow: hidden;
 }
 
-.thumb img {
+.miniaturas img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -373,7 +372,7 @@ body{
   transform: scale(1.02);
 }
 
-.thumb::after {
+.miniaturas::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -381,67 +380,64 @@ body{
   pointer-events: none;
 }
 
-/* El espacio acolchonado para el texto adentro de la tarjeta */
-.card-body {
+/* El contenedor del texto */
+.cuerpo-tarjeta {
   padding: 10px 10px 12px;
 }
 
-/* Corrección de los tamaños de letra gigantes */
-.card h4 {
+.tarjeta h4 {
   margin: 0 0 4px;
-  font-size: 10px; /* Volvió al tamaño compacto de la foto bien */
+  font-size: 10px;
   font-weight: 850;
   letter-spacing: .2px;
+  color: #fff;
 }
 
-.card p {
+.tarjeta p {
   margin: 0;
-  font-size: 8px; /* Volvió al tamaño compacto */
+  font-size: 8px;
   color: #d6d6d6;
   line-height: 1.35;
 }
 
 .meta {
   margin-top: 6px;
-  font-size: 7px; /* Volvió al tamaño compacto */
+  font-size: 7px;
   color: #a8a8a8;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 920px){
-  .wrap{ width: min(var(--container), calc(100% - 32px)); }
-  .nav-links{ gap:16px; }
-  .tarjetas{ grid-template-columns: repeat(2, 1fr); }
+/* ==========================================
+   RESPONSIVE (Actualizado con tus nombres)
+   ========================================== */
+@media (max-width: 920px) {
+  /* Pasa a 2 columnas en pantallas medianas */
+  .tarjetas { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
 }
 
-@media (max-width: 640px){
-  .nav-links{ display:none; }
-  .menu-hamburguesa{ display:block; }
-
-  /* Cards en carrusel horizontal en móvil */
-  .tarjetas{
-    display:flex;
-    gap:12px;
-    overflow-x:auto;
-    /* permite hacer scroll hacia el costado */
-    padding-bottom:6px;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
+@media (max-width: 640px) {
+  /* Transforma las tarjetas en carrusel horizontal para celulares */
+  .tarjetas {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
-  .card{
+  .tarjeta {
     min-width: 72%;
-    scroll-snap-align:start;
+    scroll-snap-align: start;
   }
 }
 
-@media (max-width: 420px){
-  .logo{ height:42px; }
-  .tarjeta{ min-width: 82%; }
+@media (max-width: 420px) {
+  /* Tarjetas un poco más anchas en celulares bien chicos */
+  .tarjeta { 
+    min-width: 82%; 
+  }
 }
-
-
 
 
 
