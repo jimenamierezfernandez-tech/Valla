@@ -226,90 +226,93 @@ body{
 /* =========================
    CALENDARIO
    ========================= */
-.calendario{
-  border:1px solid #9c9c9c;
-  /* Le hace un borde gris finito a todo el calendario y redondea las esquinas exteriores */
-  border-radius:10px;
-  overflow:hidden;
-  /* Esta línea le dice al navegador: "Cualquier cosa que se salga de los bordes redondeados de esta caja, recortala y ocultala" */
-  width:min(580px, 100%);
-  margin:16px auto 26px;
-  background:#fff;
+.calendario, .calendar {
+  border: 1px solid #9c9c9c;
+  border-radius: 10px;
+  overflow: hidden;
+  width: min(580px, 100%); /* Esto hace que no se estire de punta a punta */
+  margin: 16px auto 26px;  /* Centra la caja en la pantalla */
+  background: #fff;
 }
-.cal-header{
-  background:var(--gray-2);
-  padding:7px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  /* Centra el texto del mes tanto vertical como horizontalmente */
-  position:relative;
-  font-weight:750;
-  font-size:9px;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-  /* Separa un poquito las letras entre sí para que se lea mejor y fuerza a que todo el texto del mes esté en mayusculas*/
+
+.cal-header {
+  background: var(--gray-2);
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;     /* Necesario para que las flechas se alineen respecto a esta barra */
+  font-weight: 750;
+  font-size: 9px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
+
+/* Estilo general para ambas flechas */
 .cal-header .flecha {
-  /* Reglas que comparten AMBAS flechas */
   position: absolute;
-  top: 50%;                  /* Las baja hasta la mitad */
-  transform: translateY(-50%); /* Truco para centrarlas verticalmente en el renglón */
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 12px;
   opacity: .9;
-  cursor: pointer;           /* Para que aparezca la manito al pasar el mouse */
+  cursor: pointer;
 }
 
-/* Posición específica para la de la izquierda */
+/* Cada una a su esquina correspondiente */
 .cal-header .flecha-izq {
-  left: 12px;               /* La pega al borde izquierdo */
+  left: 12px;
 }
 
-/* Posición específica para la de la derecha */
 .cal-header .flecha-der {
-  right: 12px;              /* La pega al borde derecho */
+  right: 12px;
 }
-.cal-dias{
-  display:grid;
-  grid-template-columns:repeat(7, 1fr);
-  background:#efefef;
-  border-top:1px solid #aaa;
-  border-bottom:1px solid #aaa;
-  font-size:8px;
-  padding:6px 10px;
-  text-align:center;
+
+.cal-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #efefef;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  font-size: 8px;
+  padding: 6px 10px;
+  text-align: center;
   color:#111;
 }
-.cal-grilla{
-  display:grid;
-  grid-template-columns:repeat(7, 1fr);
-  padding:12px 10px 14px;
-  gap:10px 0;
-  font-size:8px;
-  text-align:center;
-  min-height:180px;
+
+.cal-grilla {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 12px 10px 14px;
+  gap: 10px 0;
+  font-size: 8px;
+  text-align: center;
+  min-height: 180px;
 }
-.dia{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:18px;
-  color:#111;
+
+.dia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  color: #111;
 }
-.dia-invicible{ color:#aaa; }
-.dia-elegido{
-  background:#0b0b0b;
-  color:#fff;
-  border-radius:999px;
-  width:44px;
-  margin:0 auto;
-  height:12px;
-  line-height:12px;
-  font-size:7px;
-  padding-top:1px;
+
+.dia-invicible { 
+  color: #aaa; 
+}
+
+.dia-elegido {
+  background: #0b0b0b;
+  color: #fff;
+  border-radius: 999px;
+  width: 44px;
+  margin: 0 auto;
+  height: 12px;
+  line-height: 12px;
+  font-size: 7px;
+  padding-top: 1px;
   box-shadow: 0 2px 0 rgba(0,0,0,.35);
 }
-
 /* =========================
    EVENTS
    ========================= */
