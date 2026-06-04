@@ -1,44 +1,56 @@
 <!doctype html>
 <html lang="es">
+  <!-- define el idioma en español -->
 <head>
   <meta charset="utf-8" />
+  <!-- sirve para que la página reconozca correctamente las tildes, las eñes y los signos de exclamación o pregunta -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- le dice a la página que se ajuste al ancho de la pantalla del dispositivo -->
   <title>VALLA - Home</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- vincula este archivo html con el archivo css -->
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-grid">
-      <!-- Logo pegado al borde izquierdo y en tamaño original -->
-      <a class="brand brand--flush" href="#" aria-label="Inicio">
-        <img class="brand-logo" src="img/logo.png" alt="VALLA" />
+  <header class="encabezado">
+    <div class="orden-de-ecabezado">
+      <!-- para ordenar los elementos que van a ir dentro del encabezado -->
+      <a class="logo-valla lugar-logo" href="#">
+        <!-- el class de lugar-logo hace que el logo quede bien a la izquierda -->
+        <!-- el href="#" significa que por ahora no te lleva a otra página (recarga la misma) -->
+        <img class="logo" src="img/logo.png" alt="VALLA" />
       </a>
 
       <!-- Contenido alineado al contenedor -->
-      <div class="header-content">
+      <div class="contenido-del-encabezado">
+        <!-- es otra caja contenedora que agrupa todo lo que es la navegación para poder ordenarla por CSS al lado del logo -->
         <nav class="nav" aria-label="Navegación principal">
-          <button class="hamburger" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+          <!-- le avisa a Google y a los lectores de pantalla que lo que está acá adentro es el menú con los enlaces principales del sitio -->
+          <button class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+            <!-- dice false (falso) porque el menú arranca cerrado. Cuando se programe con JavaScript para que se abra, esto cambiará a true -->
             <span class="bars" aria-hidden="true">
+              <!-- un <span> es un contenedor de texto en línea, pero acá se usa de forma estructural. aria-hidden="true" oculta esto a los lectores de pantalla porque es solo un adorno visual -->
               <span></span><span></span><span></span>
+              <!-- las tres rayas del menu de hamburguesa para celu -->
             </span>
           </button>
           <ul class="nav-links">
-            <li>Iniciar Sesión</a></li>
-            <li>Registrarse</a></li>
-            <li>Artistas</a></li>
-            <li>Lugares</a></li>
+            <!-- significa Unordered List (Lista desordenada, o sea, con viñetas en vez de números). Es la forma correcta y estándar de agrupar los elementos de un menú -->
+           <li><a href="#">Iniciar Sesión</a></li>
+           <li><a href="#">Registrarse</a></li>
+           <li><a href="#">Artistas</a></li>
+           <li><a href="#">Lugares</a></li>
           </ul>
         </nav>
       </div>
     </div>
   
   
-    <div class="wrap mobile-nav" id="mobileNav">
-      Iniciar Sesión</a>
-      Registrarse</a>
-      Artistas</a>
-      Lugares</a>
+   <div class="wrap mobile-nav" id="mobileNav">
+  <a href="#">Iniciar Sesión</a>
+  <a href="#">Registrarse</a>
+  <a href="#">Artistas</a>
+  <a href="#">Lugares</a>
     </div>
   </header>
   <main>
@@ -47,7 +59,7 @@
         <div class="search" role="search" aria-label="Buscar">
           <span>Buscar</span>
         </div>
-
+<!-- esta caja va a ser el menú que aparece de forma exclusiva en pantallas chicas (celulares) cuando se toca el botón hamburguesa -->
         <h2 class="section-title">Tú Calendario</h2>	  
 		  <div class="calendar-bleed">
 

@@ -9,13 +9,15 @@
   --shadow: 0 6px 18px rgba(0,0,0,.18);
   --shadow-soft: 0 2px 10px rgba(0,0,0,.12);
 }
-
+/* con root definís un valor acá arriba una sola vez, y después lo podés reutilizar en todo el código */
 *{ box-sizing:border-box; }
-
+/* con border-box  Si decís que un botón mide 200px de ancho, va a medir 200px pase lo que pase, tenga el borde o el relleno que tenga */
 body{
   margin:0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* le dice a la página que use la tipografía del sistema operativo del usuario (la de Apple en una Mac, la de Windows en una PC, etc.). */
   color:var(--text);
+  /* usa la variable --text que definimos en el :root (el gris oscuro) para todas las letras del sitio */
   background:#fff;
 }
 
@@ -23,18 +25,18 @@ body{
   width:min(var(--container), calc(100% - 48px));
   margin:0 auto;
 }
-
-/* =========================
-   HEADER (Logo integrado y flush-left)
-   ========================= */
-.site-header{
+/*css moderno para que la página se adapte a celulares y compus */
+/* =================
+   ENCABEZADO
+   ================= */
+.encabezado{
   background:#0b0b0b;           /* igual que el fondo del PNG */
   color:#fff;
   overflow:hidden;              /* recorta cualquier micro-overlap */
 }
 
 /* Grid: logo (auto) + contenido (1fr) */
-.header-grid{
+.orden-de-encabezado{
   display:grid;
   grid-template-columns: auto 1fr;
   align-items:center;
@@ -42,14 +44,14 @@ body{
 }
 
 /* Logo pegado al borde izquierdo */
-.brand--flush{
+.lugar-logo{
   display:block;
   margin:0;
   padding:0;
 }
 
 /* Logo en tamaño original (NO forzamos height) */
-.brand-logo{
+.logo{
   display:block;            /* evita “líneas” por baseline */
   width:auto;
   height:auto;
@@ -58,7 +60,7 @@ body{
 }
 
 /* Contenido del header alineado al contenedor */
-.header-content{
+.contenido-del-encabezado{
   width:min(980px, calc(100% - 48px));
   margin:0 auto;
   padding:18px 0;           /* altura del header como el ejemplo */
@@ -66,41 +68,51 @@ body{
   justify-content:flex-end;
 }
 
-/* NAV */
 .nav{
   display:flex;
+  /* activa Flexbox, que alinea los elementos automáticamente.por defecto, los pone a todos uno al lado del otro */
   align-items:center;
+  /* centra verticalmente todos los elementos que estén dentro del menú para que queden perfectamente alineados al medio */
   gap:14px;
+  /* crea una separación exacta de 14px entre los elementos que están dentro de .nav */
 }
 
 .nav-links{
   list-style:none;
+  /* le saca los puntitos o viñetas negras que las listas (<ul>) traen por defecto */
   display:flex;
   gap:26px;
   padding:0;
   margin:0;
   align-items:center;
   white-space:nowrap;
+  /* evita que el texto de un link se parta en dos líneas si la pantalla se achica */
   font-size:12px;
   font-weight:650;
+  /* define el grosor de la letra */
   opacity:.95;
+  /* le da una leve transparencia */
 }
 
 .nav-links a{
   color:#fff;
   text-decoration:none;
+  /* Al ponerle none (ninguna), le quita el subrayado azul */
 }
 .nav-links a:hover{
   text-decoration:underline;
+  /* es un efecto visual clásico para que se note que es cliqueable */
 }
 
-/* Hamburger */
-.hamburger{
+/* MENU HAMBURGUESA */
+.menu-hamburguesa{
   display:none;
+  /* Esto es porque se asume que la página arranca pensada para pantallas grandes, donde el menú se ve completo y no hace falta el botón de tres rayitas y lo oculta*/
   background:transparent;
   border:0;
   padding:8px;
   cursor:pointer;
+  /* hace que cuando pases el mouse por arriba del botón, la flechita del cursor se transforme en la manito de hacer clic (ponele)*/
   color:#fff;
 }
 .hamburger .bars{
