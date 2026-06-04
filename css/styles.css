@@ -443,19 +443,19 @@ body{
 
 
 
-.where{
+.donde{
   background:#dcdcdc;
   padding:50px 0 80px;
 }
 
-.where-title{
+.titulo-seccion-mapa{
   font-size:26px;
   font-weight:900;
   margin-bottom:18px;
 }
 
 /* buscador */
-.where-search{
+.busqueda-mapa{
   background:#9c9c9c;
   height:38px;
   border-radius:12px;
@@ -463,7 +463,7 @@ body{
   position:relative;
 }
 
-.where-search::before{
+.busqueda-mapa::before{
   content:"🔍";
   position:absolute;
   left:14px;
@@ -472,14 +472,28 @@ body{
   font-size:14px;
 }
 
-.where-search span{
+.busqueda-mapa span{
   position:absolute;
   left:40px;
   top:50%;
   transform:translateY(-50%);
   font-size:13px;
 }
+/* Contenedor del mapa */
+.mapa {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Obliga al mapa de adentro a respetar las esquinas redondeadas */
+  box-shadow: var(--shadow-soft); /* Si usás la variable de sombras */
+}
 
+/* El mapa propiamente dicho */
+.mapa iframe {
+  width: 100%;
+  height: 400px;  /* Le das una linda altura para que se vea cómodo */
+  border: none;   /* Le saca un borde feo que Google Maps mete por defecto */
+  display: block; /* Evita espacios extraños abajo del iframe */
+}
 /* artistas */
 .artists{
   display:flex;              /* 🔥 carrusel base */

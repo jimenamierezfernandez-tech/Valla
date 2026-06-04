@@ -186,21 +186,24 @@
   <!-- =========================
 	SECCIÓN: ¿A dónde queda?
 	========================= -->
-	<section class="where">
+	<section class="donde">
 	<div class="wrap">
-		<h2 class="where-title">¿A dónde queda?</h2>
+    <!-- se encarga de que el contenido no se pegue por completo a los bordes de la pantalla en monitores grandes, manteniendo un ancho máximo centrado -->
+		<h2 class="titulo-seccion-mapa">¿Adónde queda?</h2>
 	
 		<!-- buscador -->
-		<div class="where-search">
+		<div class="busqueda-mapa">
 		<span>Buscar un lugar</span>
 		</div>
 	
 		<!-- mapa -->
-		<div class="where-map">
+		<div class="mapa">
 		<iframe
 			src="https://www.google.com/maps?q=Buenos+Aires&output=embed"
 			loading="lazy">
+      <!-- Con esto, el mapa solo se descarga cuando el usuario baja hasta esta sección. -->
 		</iframe>
+    <!--iframe mete una página web externa (en este caso, el mapa de Google Maps) -->
 		</div>
 
 	
