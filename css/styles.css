@@ -316,83 +316,95 @@ body{
 /* =========================
    EVENTS
    ========================= */
-.seccion-eventos{
-  margin:10px 0 10px;
-  font-size:12px;
-  font-weight:800;
+.seccion-eventos {
+  margin: 14px 0 14px;
+  font-size: 14px; /* Subido para que matchee con el título del calendario */
+  font-weight: 800;
 }
 
-.tarjetas-eventos{
-  background:#0b0b0b;
-  border-radius:10px;
-  padding:18px 16px;
+/* El contenedor negro grande de fondo */
+.events-strip {
+  background: #0b0b0b;
+  border-radius: 10px;
+  padding: 18px 16px;
   box-shadow: var(--shadow-soft);
 }
 
-.tarjetas{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:16px;
+/* La grilla que alinea las 4 tarjetas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
-/* Usa CSS Grid para dividir el espacio en 4 columnas iguales y separarlas por 16px */
-.tarjeta{
-  color:#fff;
-  background:#101010;
-  border-radius:10px;
-  overflow:hidden;
+
+/* La tarjeta individual */
+.card {
+  color: #fff;
+  background: #101010;
+  border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset;
+  
+  /* IMPORTANTE: Activamos la transición y la manito del cursor acá */
+  cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease;
 }
-.card:hover{
+
+/* El efecto cuando pasás el mouse por encima de la tarjeta */
+.card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra más pesada al flotar */
 }
 
-.miniaturas{
-  position:relative;
+/* Contenedor de la foto */
+.thumb {
+  position: relative;
   aspect-ratio: 16 / 10;
-  /* Le dice al navegador que la foto tiene que mantener siempre una proporción de tipo panorámica. No importa si la pantalla se achica, la imagen nunca se va a estirar ni a deformar */
-  background:#222;
-  overflow:hidden;
+  background: #222;
+  overflow: hidden;
 }
-.miniaturas img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  /* Fuerza a la imagen a rellenar todo el espacio de la caja recortando los sobrantes */
-  display:block;
-  filter:saturate(1.05) contrast(1.05);
-  /*  Le sube un 5% la saturación y el contraste a las imágenes */
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
   transform: scale(1.02);
 }
-.miniaturas::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
-  /* Creas un elemento fantasma por encima de la foto que es un degradado que va desde un negro semi-transparente abajo */
-  pointer-events:none;
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  pointer-events: none;
 }
 
-.cuerpo-tarjeta{
-  padding:10px 10px 12px;
+/* El espacio acolchonado para el texto adentro de la tarjeta */
+.card-body {
+  padding: 10px 10px 12px;
 }
-.card h4{
-  margin:0 0 4px;
-  font-size:10px;
-  font-weight:850;
-  letter-spacing:.2px;
+
+/* Corrección de los tamaños de letra gigantes */
+.card h4 {
+  margin: 0 0 4px;
+  font-size: 10px; /* Volvió al tamaño compacto de la foto bien */
+  font-weight: 850;
+  letter-spacing: .2px;
 }
-.card p{
-  margin:0;
-  font-size:8px;
-  color:#d6d6d6;
-  line-height:1.35;
+
+.card p {
+  margin: 0;
+  font-size: 8px; /* Volvió al tamaño compacto */
+  color: #d6d6d6;
+  line-height: 1.35;
 }
-.meta{
-  margin-top:6px;
-  font-size:7px;
-  color:#a8a8a8;
+
+.meta {
+  margin-top: 6px;
+  font-size: 7px; /* Volvió al tamaño compacto */
+  color: #a8a8a8;
 }
 
 /* =========================
