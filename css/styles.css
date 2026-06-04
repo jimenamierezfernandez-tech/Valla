@@ -184,19 +184,25 @@ body{
 
 .search{
   background:var(--gray-3);
+  /* Usa la variable de gris medio (#bdbdbd) que definimos en el :root para pintar el fondo de la barra */
   border-radius:4px;
+  /* redondea sutilmente las cuatro esquinas de la barra */
   height:20px;
   width:100%;
   max-width:780px;
   position:relative;
+  /* Le avisa a la caja que los elementos que vayan adentro se van a posicionar de forma absoluta respecto a ella */
   opacity:.92;
 }
 .search::before{
+  /* Sirve para crear un elemento flotante por CSS adelante del contenido del HTML */
   content:"🔍";
   position:absolute;
+  /* le permite flotar libremente dentro de la barra de búsqueda, ignorando el flujo normal del texto */
   left:10px;
   top:50%;
   transform:translateY(-50%);
+  /* el top: 50% baja el emoji hasta la mitad de la barra, y el translateY(-50%) lo sube exactamente la mitad de su propio tamaño para que quede perfectamente alineado al centro del renglón */
   font-size:12px;
   opacity:.8;
 }
@@ -211,19 +217,21 @@ body{
   user-select:none;
 }
 
-.section-title{
+.titulo-seccion-calendario{
   font-size:14px;
   margin:14px 0 14px;
   font-weight:800;
 }
 
 /* =========================
-   CALENDAR
+   CALENDARIO
    ========================= */
-.calendar{
+.calendario{
   border:1px solid #9c9c9c;
+  /* Le hace un borde gris finito a todo el calendario y redondea las esquinas exteriores */
   border-radius:10px;
   overflow:hidden;
+  /* Esta línea le dice al navegador: "Cualquier cosa que se salga de los bordes redondeados de esta caja, recortala y ocultala" */
   width:min(580px, 100%);
   margin:16px auto 26px;
   background:#fff;
@@ -234,19 +242,34 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  /* Centra el texto del mes tanto vertical como horizontalmente */
   position:relative;
   font-weight:750;
   font-size:9px;
   letter-spacing:.5px;
   text-transform:uppercase;
+  /* Separa un poquito las letras entre sí para que se lea mejor y fuerza a que todo el texto del mes esté en mayusculas*/
 }
-.cal-header .arrow{
-  position:absolute;
-  right:10px;
-  font-size:12px;
-  opacity:.9;
+.cal-header .flecha {
+  /* Reglas que comparten AMBAS flechas */
+  position: absolute;
+  top: 50%;                  /* Las baja hasta la mitad */
+  transform: translateY(-50%); /* Truco para centrarlas verticalmente en el renglón */
+  font-size: 12px;
+  opacity: .9;
+  cursor: pointer;           /* Para que aparezca la manito al pasar el mouse */
 }
-.cal-weekdays{
+
+/* Posición específica para la de la izquierda */
+.cal-header .flecha-izq {
+  left: 12px;               /* La pega al borde izquierdo */
+}
+
+/* Posición específica para la de la derecha */
+.cal-header .flecha-der {
+  right: 12px;              /* La pega al borde derecho */
+}
+.cal-dias{
   display:grid;
   grid-template-columns:repeat(7, 1fr);
   background:#efefef;
@@ -257,7 +280,7 @@ body{
   text-align:center;
   color:#111;
 }
-.cal-grid{
+.cal-grilla{
   display:grid;
   grid-template-columns:repeat(7, 1fr);
   padding:12px 10px 14px;
@@ -266,15 +289,15 @@ body{
   text-align:center;
   min-height:180px;
 }
-.day{
+.dia{
   display:flex;
   align-items:center;
   justify-content:center;
   height:18px;
   color:#111;
 }
-.day.muted{ color:#aaa; }
-.day.selected{
+.dia-invicible{ color:#aaa; }
+.dia-elegido{
   background:#0b0b0b;
   color:#fff;
   border-radius:999px;
@@ -290,7 +313,7 @@ body{
 /* =========================
    EVENTS
    ========================= */
-.events-title{
+.seccion-eventos{
   margin:10px 0 10px;
   font-size:12px;
   font-weight:800;
