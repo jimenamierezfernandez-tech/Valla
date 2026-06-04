@@ -493,6 +493,7 @@ body{
   overflow: hidden;    /* Recorta el mapa para que respete las esquinas */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Una sombrita muy sutil */
   filter: grayscale(1) contrast(1.1);
+  /* hace que sea blanco y negro */
 }
 
 /* Forzamos al mapa a ocupar su lugar correctamente */
@@ -502,183 +503,97 @@ body{
   border: none;        /* Quita el borde tosco por defecto */
   display: block;
 }
-/* artistas */
-.artists{
-  display:flex;              /* 🔥 carrusel base */
-  gap:40px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:10px;
+
+.titulo-seccion-artistas {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
-.artists{
-  scrollbar-width:none;
+/* Grilla de 4 columnas para computadoras */
+.artistas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
 }
 
-.artists::-webkit-scrollbar{
-  display:none;
-}
-
-.artist{
-  min-width:220px;
-  text-align:center;
-  scroll-snap-align:center;
-}
-
-.artist img{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:14px;
-}
-
-.artist h4{
-  font-size:16px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.artist p{
-  font-size:11px;
-  line-height:1.5;
-  color:#333;
-}
-
-.where{
-  background:#fff; /* ✅ ahora blanco */
-  padding:50px 0 80px;
-}
-
-.where-title{
-  font-size:22px;
-  font-weight:800;
-  margin-bottom:16px;
-}
-
-.where-search{
-  background:#9e9e9e;
-  height:36px;
-  border-radius:10px;
-  position:relative;
-  margin-bottom:24px;
-}
-
-/* lupa */
-.where-search::before{
-  content:"🔍";
-  position:absolute;
-  left:12px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:14px;
-}
-
-/* texto */
-.where-search span{
-  position:absolute;
-  left:34px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:13px;
-  color:#333;
-}
-
-.where-map{
-  width:100%;
-  height:260px;
-  background:#cfcfcf;
-  border-radius:20px;
-
-  /* textura tipo mapa (simulada) */
-  background-image: linear-gradient(45deg, #e7e7e7 25%, transparent 25%),
-                    linear-gradient(-45deg, #e7e7e7 25%, transparent 25%);
-  background-size:40px 40px;
-  background-position:0 0, 20px 20px;
-
-  margin-bottom:30px;
-}
-
-.where-map{
-  width:100%;
-  height:300px;
-  border-radius:24px;
-  overflow:hidden;
-  margin-bottom:40px;
-  background:#cfcfcf;
-}
-
-.where-map iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  filter: grayscale(1) contrast(1.1); /* 🔥 estilo igual al mock */
-}
-
-.artists-title{
-  font-size:18px;
-  font-weight:800;
-  margin-bottom:20px;
-}
-
-.artists{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:30px;
-  text-align:center;
-}
-
-.artist img{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:10px;
-}
-
-.artist h4{
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:8px;
-}
-
-.artist p{
-  font-size:10px;
-  color:#333;
-  line-height:1.4;
-}
-
-.artist{
+/* Tarjeta individual */
+.artista {
   transition: transform .3s ease;
 }
 
-.artist:hover{
+.artista:hover {
   transform: translateY(-6px);
 }
 
-.artist img{
+/* Foto del artista (Unificado) */
+.artista img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
   transition: transform .35s ease, box-shadow .35s ease;
 }
 
-.artist:hover img{
+/* Efecto hover en la foto */
+.artista:hover img {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
 
-@keyframes shine{
-  0%{
+.artista h4 {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.artista p {
+  font-size: 10px;
+  color: #333;
+  line-height: 1.4;
+  text-wrap: pretty; /* Evita palabras viudas/sueltas al final del párrafo */
+}
+
+/* Tu animación de destello lista para usar */
+@keyframes shine {
+  0% {
     transform: translateX(-120%);
-    opacity:0;
+    opacity: 0;
   }
-  50%{
-    opacity:1;
+  50% {
+    opacity: 1;
   }
-  100%{
+  100% {
     transform: translateX(120%);
-    opacity:0;
+    opacity: 0;
   }
 }
 
+/* =======================================================
+   RESPONSIVE (Para que la grilla no explote en celular)
+   ======================================================= */
+@media (max-width: 992px) {
+  /* En tablets pasa a 2 columnas para que el texto respire */
+  .artistas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  /* En celulares se apilan de a uno para una lectura perfecta */
+  .artistas {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .artista img {
+    width: 130px; /* Las agrandamos un toque ya que tienen toda la pantalla */
+    height: 130px;
+  }
+}
 /* contenedor relativo */
 .brand{
   position:relative;
