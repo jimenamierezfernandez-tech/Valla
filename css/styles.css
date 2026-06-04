@@ -492,6 +492,7 @@ body{
   border-radius: 16px; /* Bordes redondeados suaves igual que en la foto */
   overflow: hidden;    /* Recorta el mapa para que respete las esquinas */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Una sombrita muy sutil */
+  filter: grayscale(1) contrast(1.1);
 }
 
 /* Forzamos al mapa a ocupar su lugar correctamente */
