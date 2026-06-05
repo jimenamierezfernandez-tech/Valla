@@ -106,34 +106,49 @@ body{
 /* =========================
    SEARCH + TITLES
    ========================= */
-.search-row {
-  width: 100%;
-  padding: 20px 0; /* Espaciado arriba y abajo de la barra */
+.search-row{
+  padding:16px 0 12px;
 }
 
-/* Tu contenedor .search ahora le da el ancho total al input */
-.search {
-  width: 100%;
+.search{
+  background:var(--gray-3);
+  /* Usa la variable de gris medio (#bdbdbd) que definimos en el :root para pintar el fondo de la barra */
+  border-radius:4px;
+  /* redondea sutilmente las cuatro esquinas de la barra */
+  height:20px;
+  width:100%;
+  max-width:980px;
+  position:relative;
+  /* Le avisa a la caja que los elementos que vayan adentro se van a posicionar de forma absoluta respecto a ella */
+  opacity:.92;
+}
+.search::before{
+  /* Sirve para crear un elemento flotante por CSS adelante del contenido del HTML */
+  content:"🔍";
+  position:absolute;
+  /* le permite flotar libremente dentro de la barra de búsqueda, ignorando el flujo normal del texto */
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+  /* el top: 50% baja el emoji hasta la mitad de la barra, y el translateY(-50%) lo sube exactamente la mitad de su propio tamaño para que quede perfectamente alineado al centro del renglón */
+  font-size:12px;
+  opacity:.8;
+}
+.search span{
+  position:absolute;
+  left:32px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:11px;
+  color:#2c2c2c;
+  opacity:.85;
+  user-select:none;
 }
 
-/* El estilo del input estirado e idéntico a tu diseño */
-.input-busqueda-valla {
-  width: 100%;             /* ¡CLAVE! Obliga a la barra a estirarse hasta el ancho del .wrap */
-  box-sizing: border-box;   /* Evita que los paddings la ensanchen de más hacia los costados */
-  
-  background-color: #e0e0e0; /* El color gris claro de tu captura */
-  border: none;             /* Le sacamos el borde de fábrica */
-  border-radius: 8px;       /* Bordes redondeados sutiles */
-  padding: 12px 16px;       /* Aire interno para que el texto respire */
-  
-  font-size: 14px;
-  color: #333;
-  outline: none;            /* Saca la línea azul molesta al hacer click */
-}
-
-/* Opcional: Un cambio de color sutil cuando el usuario hace click para escribir */
-.input-busqueda-valla:focus {
-  background-color: #d5d5d5;
+.titulo-seccion-calendario{
+  font-size:14px;
+  margin:14px 0 14px;
+  font-weight:800;
 }
 
 /* =========================
