@@ -29,43 +29,42 @@ body{
 /* =================
    ENCABEZADO
    ================= */
-.encabezado{
-  background:#0b0b0b;           /* igual que el fondo del PNG */
-  color:#fff;
-  overflow:hidden;              /* recorta cualquier micro-overlap */
+.encabezado {
+  background: #0b0b0b;
+  color: #fff;
+  overflow: hidden;
 }
 
-/* Grid: logo (auto) + contenido (1fr) */
-.orden-de-encabezado{
-  display:grid;
+/* Grid principal: mantiene el logo y el bloque de links en la misma línea */
+.orden-de-encabezado {
+  display: grid;
   grid-template-columns: auto 1fr;
-  align-items:center;
-  gap: 18px;
+  align-items: center; /* Centra verticalmente el logo con el menú */
+  padding: 0 24px;     /* Le da un respiro a los costados del header completo */
 }
 
 /* Logo pegado al borde izquierdo */
-.lugar-logo{
-  display:block;
-  margin:0;
-  padding:0;
+.lugar-logo {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
-/* Logo en tamaño original (NO forzamos height) */
-.logo{
-  display:block;            /* evita “líneas” por baseline */
-  width:auto;
-  height:auto;
-  max-width:none;           /* no lo “aprietes” sin querer */
-  image-rendering:auto;
+.logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  image-rendering: auto;
 }
 
-/* Contenido del header alineado al contenedor */
-.contenido-del-encabezado{
-  width:min(980px, calc(100% - 48px));
-  margin:0 auto;
-  padding:18px 0;           /* altura del header como el ejemplo */
-  display:flex;
-  justify-content:flex-end;
+/* Contenido del header CORREGIDO */
+.contenido-del-encabezado {
+  display: flex;
+  justify-content: flex-end; /* Empuja el menú "Iniciar Sesión, Registrarse..." a la derecha */
+  align-items: center;       /* Alinea los links justo al centro vertical del logo */
+  padding: 18px 0;           /* Controla la altura del header negro equitativamente */
+  width: 100%;               /* Ocupa todo el espacio de su columna del Grid */
 }
 
 .nav{
