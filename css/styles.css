@@ -117,7 +117,7 @@ body{
   /* redondea sutilmente las cuatro esquinas de la barra */
   height:20px;
   width:100%;
-  max-width:1200px;
+  max-width:1400px;
   position:relative;
   /* Le avisa a la caja que los elementos que vayan adentro se van a posicionar de forma absoluta respecto a ella */
   opacity:.92;
