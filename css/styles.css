@@ -32,48 +32,48 @@ body{
 .encabezado {
   background: #0b0b0b;
   color: #fff;
-  overflow: hidden;
-  height: 90px; /* Ajustá este número (ej. 80px o 90px) al alto que quieras que tenga tu barra */
+  width: 100%;
 }
 
-/* 2. La grilla que une al logo y al menú */
+/* Usamos Flexbox para que la barra negra se adapte al alto REAL de tu logo */
 .orden-de-encabezado {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center; /* Centra todo verticalmente */
-  height: 100%;        /* Ocupa los 90px del padre */
-  padding: 0 24px;
-}
-
-/* 3. CONTROL TOTAL DEL LOGO (Evitamos que estire la barra) */
-.lugar-logo {
   display: flex;
-  align-items: center;
-  height: 100%;
+  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+  align-items: center;            /* Centra verticalmente TODO basándose en el elemento más alto */
+  padding: 10px 24px;             /* Un aire mínimo arriba y abajo */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* El contenedor del logo */
+.lugar-logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tu configuración original del logo intacta */
 .logo {
   display: block;
-  height: 50px;       /* ¡CLAVE! Forzamos al logo a medir 50px de alto máximo */
-  width: auto;        /* El ancho se calcula solo para no deformarlo */
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: none;
+  image-rendering: auto;
 }
 
-/* 4. Contenedor del menú */
+/* Bloque derecho del header */
 .contenido-del-encabezado {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  height: 100%;
+  justify-content: flex-end;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
-/* 5. Los links del menú limpios */
+/* Forzamos a la lista a ponerse en fila y centrarse con el alto de la barra */
 .nav-links {
   display: flex !important;
   flex-direction: row !important;
@@ -81,12 +81,14 @@ body{
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  gap: 20px;
+  gap: 24px; 
 }
 
 .nav-links li {
   margin: 0 !important;
   padding: 0 !important;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
@@ -94,12 +96,13 @@ body{
   text-decoration: none !important;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1 !important;
+  display: block;
+  line-height: 1 !important; /* Neutraliza cualquier interlineado que los tire abajo */
 }
 
-/* Ocultamos el botón de celular */
+/* Ocultamos por completo la hamburguesa */
 .menu-hamburguesa {
-  display: none;
+  display: none !important;
 }
 /* Mobile nav */
 .mobile-nav{
