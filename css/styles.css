@@ -29,25 +29,30 @@ body{
 /* =================
    ENCABEZADO
    ================= */
+/* 1. El contenedor negro global de punta a punta */
 .encabezado {
   background: #0b0b0b;
   color: #fff;
   overflow: hidden;
+  width: 100%;
 }
 
-/* Grid principal: mantiene el logo y el bloque de links en la misma línea */
+/* 2. La grilla que alinea el Logo a la izquierda y el bloque del menú a la derecha */
 .orden-de-encabezado {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center; /* Centra verticalmente el logo con el menú */
-  padding: 0 24px;     /* Le da un respiro a los costados del header completo */
+  align-items: center; /* Centra verticalmente el logo con la caja del menú */
+  padding: 0 24px;     /* Separación para que el logo no toque el borde de la pantalla */
+  height: 90px;        /* Forzamos la altura fija del header para que nada se caiga */
 }
 
-/* Logo pegado al borde izquierdo */
+/* 3. Estilos del Logo */
 .lugar-logo {
-  display: block;
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .logo {
@@ -58,75 +63,56 @@ body{
   image-rendering: auto;
 }
 
-/* Contenido del header CORREGIDO */
+/* 4. La caja contenedora del menú (celda derecha de la grilla) */
 .contenido-del-encabezado {
   display: flex;
-  justify-content: flex-end; /* Empuja el menú "Iniciar Sesión, Registrarse..." a la derecha */
-  align-items: center;       /* Alinea los links justo al centro vertical del logo */
-  padding: 18px 0;           /* Controla la altura del header negro equitativamente */
-  width: 100%;               /* Ocupa todo el espacio de su columna del Grid */
+  justify-content: flex-end; /* Empuja todo el menú al fondo a la derecha */
+  align-items: center;       /* Centra el menú verticalmente */
+  height: 100%;
+  width: 100%;
 }
 
-.nav{
-  display:flex;
-  /* activa Flexbox, que alinea los elementos automáticamente.por defecto, los pone a todos uno al lado del otro */
-  align-items:center;
-  /* centra verticalmente todos los elementos que estén dentro del menú para que queden perfectamente alineados al medio */
-  gap:14px;
-  /* crea una separación exacta de 14px entre los elementos que están dentro de .nav */
+/* 5. El menú de navegación */
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-.nav-links{
-  list-style:none;
-  /* le saca los puntitos o viñetas negras que las listas (<ul>) traen por defecto */
-  display:flex;
-  gap:26px;
-  padding:0;
-  margin:0;
-  align-items:center;
-  white-space:nowrap;
-  /* evita que el texto de un link se parta en dos líneas si la pantalla se achica */
-  font-size:12px;
-  font-weight:650;
-  /* define el grosor de la letra */
-  opacity:.95;
-  /* le da una leve transparencia */
+/* 6. ¡LA LISTA DE LINKS CORREGIDA! (Esto evita que se caiga) */
+.nav-links {
+  display: flex !important;   /* Obliga a los links a ponerse uno al lado del otro */
+  flex-direction: row !important; 
+  align-items: center !important; /* Los centra verticalmente en la línea media */
+  list-style: none;           /* Saca los puntitos de la lista */
+  margin: 0;
+  padding: 0;
+  gap: 20px;                  /* Separación horizontal entre cada link */
 }
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  /* Al ponerle none (ninguna), le quita el subrayado azul */
-}
-.nav-links a:hover{
-  text-decoration:underline;
-  /* es un efecto visual clásico para que se note que es cliqueable */
+/* 7. Estilo de los textos de tus links */
+.nav-links li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
-/* MENU HAMBURGUESA */
-.menu-hamburguesa{
-  display:none;
-  /* Esto es porque se asume que la página arranca pensada para pantallas grandes, donde el menú se ve completo y no hace falta el botón de tres rayitas y lo oculta*/
-  background:transparent;
-  border:0;
-  padding:8px;
-  cursor:pointer;
-  /* hace que cuando pases el mouse por arriba del botón, la flechita del cursor se transforme en la manito de hacer clic (ponele)*/
-  color:#fff;
-}
-.hamburger .bars{
-  width:22px;
-  height:14px;
-  display:grid;
-  gap:3px;
-}
-.hamburger .bars span{
-  display:block;
-  height:2px;
-  background:#fff;
-  border-radius:2px;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease;
 }
 
+.nav-links a:hover {
+  color: #ccc; /* Un gris sutil cuando pasás el mouse */
+}
+
+/* Ocultamos el botón de hamburguesa en computadora por las dudas */
+.menu-hamburguesa {
+  display: none;
+}
 /* Mobile nav */
 .mobile-nav{
   display:none;
