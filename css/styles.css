@@ -33,63 +33,60 @@ body{
   background: #0b0b0b;
   color: #fff;
   overflow: hidden;
+  height: 90px; /* Ajustá este número (ej. 80px o 90px) al alto que quieras que tenga tu barra */
 }
 
-/* El contenedor Grid que armaste originalmente */
+/* 2. La grilla que une al logo y al menú */
 .orden-de-encabezado {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center; /* Esto alinea el logo y la caja del menú al centro */
-  gap: 18px;
-  padding: 0 24px;     /* Espacio a los costados para que respire */
+  align-items: center; /* Centra todo verticalmente */
+  height: 100%;        /* Ocupa los 90px del padre */
+  padding: 0 24px;
 }
 
-/* El logo queda intacto */
+/* 3. CONTROL TOTAL DEL LOGO (Evitamos que estire la barra) */
 .lugar-logo {
-  display: block;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo {
   display: block;
-  width: auto;
-  height: auto;
-  max-width: none;
+  height: 50px;       /* ¡CLAVE! Forzamos al logo a medir 50px de alto máximo */
+  width: auto;        /* El ancho se calcula solo para no deformarlo */
+  object-fit: contain;
 }
 
-/* Contenido del header: actúa como un puente limpio */
+/* 4. Contenedor del menú */
 .contenido-del-encabezado {
   display: flex;
-  justify-content: flex-end; /* Empuja el menú a la derecha */
-  align-items: center;       /* Forzamos centro vertical absoluto */
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }
 
-/* El menú de navegación */
 .nav {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
-/* ========================================================
-   ¡EL ARREGLO CLAVE!: Forzamos a la lista a comportarse
-   ======================================================== */
+/* 5. Los links del menú limpios */
 .nav-links {
-  display: flex !important;       /* Obliga a los links a ponerse en fila horizontal */
-  flex-direction: row !important; /* Asegura que vayan de izquierda a derecha */
-  align-items: center !important; /* Los centra verticalmente de forma obligatoria */
-  list-style: none !important;    /* Saca los puntitos */
-  margin: 0 !important;           /* Resetea márgenes rebeldes que tiran todo abajo */
-  padding: 0 !important;          /* Resetea paddings rebeldes */
-  gap: 20px;                      /* Espaciado de separación entre botones */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 20px;
 }
 
-/* Controlamos los elementos de la lista y los enlaces individuales */
 .nav-links li {
   margin: 0 !important;
   padding: 0 !important;
-  display: flex;
-  align-items: center;
 }
 
 .nav-links a {
@@ -97,12 +94,10 @@ body{
   text-decoration: none !important;
   font-size: 14px;
   font-weight: 700;
-  display: inline-block;
-  line-height: 1 !important;     /* Evita que un interlineado alto tire el texto al piso */
-  padding: 10px 0;               /* Centrado controlado */
+  line-height: 1 !important;
 }
 
-/* Ocultamos el botón de celu en compu */
+/* Ocultamos el botón de celular */
 .menu-hamburguesa {
   display: none;
 }
