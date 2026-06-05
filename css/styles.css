@@ -35,37 +35,30 @@ body{
   width: 100%;
 }
 
-/* Usamos Flexbox para que la barra negra se adapte al alto REAL de tu logo */
-.orden-de-encabezado {
+.orden-de-ecabezado {
   display: flex;
-  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
-  align-items: center;            /* Centra verticalmente TODO basándose en el elemento más alto */
-  padding: 10px 24px;             /* Un aire mínimo arriba y abajo */
+  justify-content: space-between;
+  align-items: center; /* Centra el logo con el menú horizontalmente */
+  padding: 15px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* El contenedor del logo */
 .lugar-logo {
-  display: block;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-/* Tu configuración original del logo intacta */
 .logo {
   display: block;
   width: auto;
   height: auto;
   max-width: none;
-  image-rendering: auto;
 }
 
-/* Bloque derecho del header */
 .contenido-del-encabezado {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .nav {
@@ -73,82 +66,34 @@ body{
   align-items: center;
 }
 
-/* Forzamos a la lista a ponerse en fila y centrarse con el alto de la barra */
 .nav-links {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  gap: 24px; 
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
 }
 
 .nav-links li {
-  margin: 0 !important;
-  padding: 0 !important;
   display: flex;
   align-items: center;
 }
 
 .nav-links a {
-  color: #fff !important;
-  text-decoration: none !important;
+  color: #fff;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  display: block;
-  line-height: 1 !important; /* Neutraliza cualquier interlineado que los tire abajo */
+  line-height: 1;
 }
 
-/* Ocultamos por completo la hamburguesa */
+/* Ocultamos los elementos de celular en la versión de escritorio */
 .menu-hamburguesa {
-  display: none !important;
-}
-/* Mobile nav */
-.mobile-nav{
-  display:none;
-  padding: 0 0 14px;
-}
-.mobile-nav a{
-  display:block;
-  padding:10px 0;
-  border-top:1px solid rgba(255,255,255,.12);
-  color:#fff;
-  text-decoration:none;
-  font-weight:650;
-  font-size:13px;
-}
-.mobile-nav.show{ display:block; }
-/* display: block;: Por defecto, los enlaces (<a>) son elementos inline (se ponen uno al lado del otro). Al cambiarlo a block (bloque), obligás a que cada link ocupe todo el ancho disponible de la pantalla */
-
-/* =========================
-   RESPONSIVE HEADER
-   ========================= */
-@media (max-width: 920px){
-  /* Esto es como darle una orden condicional al navegador: "Si la pantalla mide $920$ píxeles de ancho o menos (como una tablet o una compu chiquita), activá estas reglas. Si es más grande, ignoralas" */
-  .header-content{
-    width: min(980px, calc(100% - 32px));
-  }
-  .nav-links{ gap:16px; }
+  display: none;
 }
 
-/* En mobile ocultamos links y mostramos hamburger */
-@media (max-width: 640px){
-  /* Esta regla se activa únicamente en pantallas que miden $640$ píxeles o menos (el tamaño típico de un celular) */
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
-}
-
-.nav-links li{
-  transition: all .25s ease;
-}
-/*  Por defecto, los cambios en CSS son instantáneos y bruscos. Al poner esta línea, le decís al navegador: "Cualquier cambio de estilo que sufra este elemento (tamaño, color, etc.), hacelo en forma de animación suave que dure $0.25$ segundos" */
-.nav-links li:hover{
-  transform: scale(1.15);
-}
-/* Cuando el usuario pasa el mouse sobre un elemento de la lista (li), este se agranda un $15\%$ (1.15). Gracias a la transición que esta arriba */
-.nav-links li:hover a{
-  color:#bfbfbf;
+.mobile-nav {
+  display: none; /* Evita que el menú desplegable se vea en compu */
 }
 /* Al mismo tiempo que el texto se agranda, el color de la letra del link (<a>) cambia de gris a un blanco puro */
 /* =========================
