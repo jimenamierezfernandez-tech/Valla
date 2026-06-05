@@ -35,32 +35,39 @@ body{
   width: 100%;
 }
 
+/* Caja de orden CORREGIDA: Empuja el logo a la izquierda y el menú a la derecha */
 .orden-de-ecabezado {
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* Centra el logo con el menú horizontalmente */
-  padding: 15px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 0; /* Sacamos el padding para que la barra negra respete el ras del logo */
+  width: 100%;
 }
 
+/* Forzamos al logo a pegarse al borde izquierdo absoluto sin márgenes */
 .lugar-logo {
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
+/* El logo en su estado natural y al ras */
 .logo {
   display: block;
   width: auto;
   height: auto;
   max-width: none;
+  image-rendering: auto;
+  vertical-align: bottom; /* Evita micro-espacios vacíos abajo de la imagen */
 }
 
+/* El contenedor del menú mantiene un pequeño aire a la derecha para que no toque el borde de la pantalla */
 .contenido-del-encabezado {
   display: flex;
   align-items: center;
+  padding-right: 24px; 
 }
-
 .nav {
   display: flex;
   align-items: center;
