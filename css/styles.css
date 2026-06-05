@@ -29,30 +29,26 @@ body{
 /* =================
    ENCABEZADO
    ================= */
-/* 1. El contenedor negro global de punta a punta */
 .encabezado {
   background: #0b0b0b;
   color: #fff;
   overflow: hidden;
-  width: 100%;
 }
 
-/* 2. La grilla que alinea el Logo a la izquierda y el bloque del menú a la derecha */
+/* El contenedor Grid que armaste originalmente */
 .orden-de-encabezado {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: center; /* Centra verticalmente el logo con la caja del menú */
-  padding: 0 24px;     /* Separación para que el logo no toque el borde de la pantalla */
-  height: 90px;        /* Forzamos la altura fija del header para que nada se caiga */
+  align-items: center; /* Esto alinea el logo y la caja del menú al centro */
+  gap: 18px;
+  padding: 0 24px;     /* Espacio a los costados para que respire */
 }
 
-/* 3. Estilos del Logo */
+/* El logo queda intacto */
 .lugar-logo {
-  display: flex;
-  align-items: center;
+  display: block;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 .logo {
@@ -60,56 +56,53 @@ body{
   width: auto;
   height: auto;
   max-width: none;
-  image-rendering: auto;
 }
 
-/* 4. La caja contenedora del menú (celda derecha de la grilla) */
+/* Contenido del header: actúa como un puente limpio */
 .contenido-del-encabezado {
   display: flex;
-  justify-content: flex-end; /* Empuja todo el menú al fondo a la derecha */
-  align-items: center;       /* Centra el menú verticalmente */
-  height: 100%;
-  width: 100%;
+  justify-content: flex-end; /* Empuja el menú a la derecha */
+  align-items: center;       /* Forzamos centro vertical absoluto */
 }
 
-/* 5. El menú de navegación */
+/* El menú de navegación */
 .nav {
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
-/* 6. ¡LA LISTA DE LINKS CORREGIDA! (Esto evita que se caiga) */
+/* ========================================================
+   ¡EL ARREGLO CLAVE!: Forzamos a la lista a comportarse
+   ======================================================== */
 .nav-links {
-  display: flex !important;   /* Obliga a los links a ponerse uno al lado del otro */
-  flex-direction: row !important; 
-  align-items: center !important; /* Los centra verticalmente en la línea media */
-  list-style: none;           /* Saca los puntitos de la lista */
-  margin: 0;
-  padding: 0;
-  gap: 20px;                  /* Separación horizontal entre cada link */
+  display: flex !important;       /* Obliga a los links a ponerse en fila horizontal */
+  flex-direction: row !important; /* Asegura que vayan de izquierda a derecha */
+  align-items: center !important; /* Los centra verticalmente de forma obligatoria */
+  list-style: none !important;    /* Saca los puntitos */
+  margin: 0 !important;           /* Resetea márgenes rebeldes que tiran todo abajo */
+  padding: 0 !important;          /* Resetea paddings rebeldes */
+  gap: 20px;                      /* Espaciado de separación entre botones */
 }
 
-/* 7. Estilo de los textos de tus links */
+/* Controlamos los elementos de la lista y los enlaces individuales */
 .nav-links li {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {
-  color: #fff;
-  text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
   font-size: 14px;
   font-weight: 700;
-  transition: color 0.2s ease;
+  display: inline-block;
+  line-height: 1 !important;     /* Evita que un interlineado alto tire el texto al piso */
+  padding: 10px 0;               /* Centrado controlado */
 }
 
-.nav-links a:hover {
-  color: #ccc; /* Un gris sutil cuando pasás el mouse */
-}
-
-/* Ocultamos el botón de hamburguesa en computadora por las dudas */
+/* Ocultamos el botón de celu en compu */
 .menu-hamburguesa {
   display: none;
 }
