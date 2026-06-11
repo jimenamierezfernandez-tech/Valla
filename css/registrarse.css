@@ -1,33 +1,10 @@
 /* =========================================
-   RESET Y CONFIGURACIÓN GENERAL
-   ========================================= */
-:root {
-  --container: 980px;
-}
-
-* { 
-  box-sizing: border-box; 
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #ffffff;
-}
-
-.wrap {
-  width: min(var(--container), calc(100% - 48px));
-  margin: 0 auto;
-}
-
-/* =========================================
-   HEADER NEGRO
+   HEADER NEGRO (CORREGIDO PARA BANNER GRANDE)
    ========================================= */
 .encabezado-registro {
   background-color: #0b0b0b;
   width: 100%;
-  padding: 24px 0;
+  padding: 0; /* Sacamos el padding para que la imagen maneje el alto natural */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,79 +12,16 @@ body {
 
 .contenedor-logo-registro {
   width: 100%;
-  max-width: var(--container);
+  /* Eliminamos el límite de 980px para que el banner se expanda */
+  max-width: 100%; 
   display: flex;
   justify-content: center;
-  padding: 0 24px;
 }
 
 .logo-bienvenida {
   display: block;
-  max-width: 100%;
+  width: 100%;          /* Forzamos a que ocupe todo el ancho disponible */
+  max-width: 1400px;    /* Límite para pantallas gigantes, podés subirlo si querés más grande */
   height: auto;
-  mix-blend-mode: screen; /* Mezcla el fondo de la imagen con el negro */
-}
-
-/* =========================================
-   FORMULARIO REDONDEADO
-   ========================================= */
-.contenedor-registro {
-  display: flex;
-  justify-content: center;
-  padding: 60px 0; /* Separa el formulario de la barra negra */
-}
-
-.formulario-valla {
-  width: 100%;
-  max-width: 500px; /* Controla el ancho para que no se deforme */
-}
-
-.grupo-formulario {
-  margin-bottom: 24px;
-}
-
-.grupo-formulario label {
-  display: block;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: #0b0b0b;
-}
-
-.grupo-formulario input {
-  width: 100%;
-  padding: 14px 20px;
-  font-size: 16px;
-  border: 2px solid #000000;
-  border-radius: 18px; /* Bordes redondeados idénticos a tu diseño */
-  outline: none;
-  background-color: #ffffff;
-}
-
-.grupo-formulario input::placeholder {
-  color: #888888;
-}
-
-/* BOTÓN SUBMIT A LA DERECHA */
-.bloque-boton {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.btn-ok {
-  background-color: #0b0b0b;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 32px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn-ok:hover {
-  background-color: #222222;
+  mix-blend-mode: screen; 
 }
