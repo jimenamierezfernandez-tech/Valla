@@ -1,84 +1,67 @@
-:root{
-    --black:#0b0b0b;
-    --white:#ffffff;
-    --text:#111;
-    --gray-2:#e3e3e3;
-    --gray-3:#bdbdbd;
-  
-    --container:980px;
-    --shadow: 0 6px 18px rgba(0,0,0,.18);
-    --shadow-soft: 0 2px 10px rgba(0,0,0,.12);
-  }
-  /* con root definís un valor acá arriba una sola vez, y después lo podés reutilizar en todo el código */
-  *{ box-sizing:border-box; }
-  /* con border-box  Si decís que un botón mide 200px de ancho, va a medir 200px pase lo que pase, tenga el borde o el relleno que tenga */
-  body{
-    margin:0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    /* le dice a la página que use la tipografía del sistema operativo del usuario (la de Apple en una Mac, la de Windows en una PC, etc.). */
-    color:var(--text);
-    /* usa la variable --text que definimos en el :root (el gris oscuro) para todas las letras del sitio */
-    background:#fff;
-  }
-  
-  .wrap{
-    width:min(var(--container), calc(100% - 48px));
-    margin:0 auto;
-  }
-  /*css moderno para que la página se adapte a celulares y compus */
-  /* =================
-     ENCABEZADO
-     ================= */
-  .encabezado {
-    background: #0b0b0b;
-    color: #fff;
-    width: 100%;
-  }
-  
-  /* Caja de orden CORREGIDA: Empuja el logo a la izquierda y el menú a la derecha */
-  .orden-de-ecabezado {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    padding: 0; /* Sacamos el padding para que la barra negra respete el ras del logo */
-    width: 100%;
-  }
-  
-  /* Forzamos al logo a pegarse al borde izquierdo absoluto sin márgenes */
-  .lugar-logo {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* El logo en su estado natural y al ras */
-  .logo {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: none;
-    image-rendering: auto;
-    vertical-align: bottom; /* Evita micro-espacios vacíos abajo de la imagen */
-  }
-  /* Centra el bloque en la pantalla */
+:root {
+  --container: 980px;
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #ffffff;
+}
+
+.wrap {
+  width: min(var(--container), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   ENCABEZADO EXCLUSIVO DE REGISTRO
+   ========================================= */
+.encabezado-registro {
+  background-color: #0b0b0b;
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-logo-registro {
+  width: 100%;
+  max-width: var(--container);
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.logo-bienvenida {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  mix-blend-mode: screen; /* Quita el recuadro blanco de la imagen */
+}
+
+/* =========================================
+   SECCIÓN FORMULARIO DE REGISTRO
+   ========================================= */
 .contenedor-registro {
   display: flex;
   justify-content: center;
-  padding: 60px 0;
+  padding: 60px 0; /* Le da espacio en blanco abajo del header */
 }
 
 .formulario-valla {
   width: 100%;
-  max-width: 500px;
+  max-width: 500px; /* Evita que el formulario se estire horroroso de punta a punta */
 }
 
-/* Espacio entre campos */
 .grupo-formulario {
   margin-bottom: 24px;
 }
 
-/* Estilo de las etiquetas (Name, Email) */
 .grupo-formulario label {
   display: block;
   font-size: 18px;
@@ -87,13 +70,13 @@
   color: #0b0b0b;
 }
 
-/* Estilo de los inputs idénticos a tu captura */
+/* Inputs idénticos al diseño redondeado */
 .grupo-formulario input {
   width: 100%;
   padding: 14px 20px;
   font-size: 16px;
   border: 2px solid #000000;
-  border-radius: 18px;
+  border-radius: 18px; /* Redondeado tipo píldora */
   outline: none;
   background-color: #ffffff;
 }
@@ -102,7 +85,7 @@
   color: #888888;
 }
 
-/* Contenedor para empujar el botón a la derecha */
+/* Contenedor que empuja el botón a la derecha */
 .bloque-boton {
   display: flex;
   justify-content: flex-end;
@@ -110,7 +93,7 @@
   margin-top: 20px;
 }
 
-/* Botón negro estilo VALLA */
+/* Botón Submit Negro */
 .btn-ok {
   background-color: #0b0b0b;
   color: #ffffff;
