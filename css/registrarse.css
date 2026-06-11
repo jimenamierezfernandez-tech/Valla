@@ -1,15 +1,19 @@
+/* =========================================
+   RESET Y CONFIGURACIÓN GENERAL
+   ========================================= */
 :root {
   --container: 980px;
 }
 
 * { 
   box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
 .wrap {
@@ -18,7 +22,7 @@ body {
 }
 
 /* =========================================
-   ENCABEZADO EXCLUSIVO DE REGISTRO
+   HEADER NEGRO
    ========================================= */
 .encabezado-registro {
   background-color: #0b0b0b;
@@ -41,21 +45,21 @@ body {
   display: block;
   max-width: 100%;
   height: auto;
-  mix-blend-mode: screen; /* Quita el recuadro blanco de la imagen */
+  mix-blend-mode: screen; /* Mezcla el fondo de la imagen con el negro */
 }
 
 /* =========================================
-   SECCIÓN FORMULARIO DE REGISTRO
+   FORMULARIO REDONDEADO
    ========================================= */
 .contenedor-registro {
   display: flex;
   justify-content: center;
-  padding: 60px 0; /* Le da espacio en blanco abajo del header */
+  padding: 60px 0; /* Separa el formulario de la barra negra */
 }
 
 .formulario-valla {
   width: 100%;
-  max-width: 500px; /* Evita que el formulario se estire horroroso de punta a punta */
+  max-width: 500px; /* Controla el ancho para que no se deforme */
 }
 
 .grupo-formulario {
@@ -70,13 +74,12 @@ body {
   color: #0b0b0b;
 }
 
-/* Inputs idénticos al diseño redondeado */
 .grupo-formulario input {
   width: 100%;
   padding: 14px 20px;
   font-size: 16px;
   border: 2px solid #000000;
-  border-radius: 18px; /* Redondeado tipo píldora */
+  border-radius: 18px; /* Bordes redondeados idénticos a tu diseño */
   outline: none;
   background-color: #ffffff;
 }
@@ -85,7 +88,7 @@ body {
   color: #888888;
 }
 
-/* Contenedor que empuja el botón a la derecha */
+/* BOTÓN SUBMIT A LA DERECHA */
 .bloque-boton {
   display: flex;
   justify-content: flex-end;
@@ -93,7 +96,6 @@ body {
   margin-top: 20px;
 }
 
-/* Botón Submit Negro */
 .btn-ok {
   background-color: #0b0b0b;
   color: #ffffff;
