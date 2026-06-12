@@ -512,7 +512,9 @@ body{
   font-weight: 800;
   margin-bottom: 20px;
 }
-
+.fancybox__slide.has-iframe .f-html {
+  padding: 0;
+}
 /* Grilla de 4 columnas para computadoras */
 .artistas {
   display: grid;
