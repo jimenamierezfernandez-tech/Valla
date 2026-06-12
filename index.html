@@ -7,16 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- le dice a la página que se ajuste al ancho de la pantalla del dispositivo -->
   <title>VALLA - Home</title>
-  <a
-  href="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10500.902039411158!2d2.2913514905137315!3d48.85391001859112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slv!2slv!4v1622011463926!5m2!1slv!2slv"
-  data-fancybox
-  data-type="iframe"
-  data-width="640"
-  data-height="480"
->
-  Show map
-</a>
-
   <link rel="stylesheet" href="css/styles.css" />
   <!-- vincula este archivo html con el archivo css -->
 </head>
@@ -193,12 +183,12 @@
 	
 		<!-- mapa -->
 		<div class="mapa">
-      <a
-      href="https://www.google.com/maps?q=Buenos+Aires&output=embed"
-      data-fancybox
-    >
-      Show map
-    </a>
+		<iframe
+			src="https://www.google.com/maps?q=Buenos+Aires&output=embed"
+			loading="lazy">
+      <!-- Con esto, el mapa solo se descarga cuando el usuario baja hasta esta sección. -->
+		</iframe>
+    <!--iframe mete una página web externa (en este caso, el mapa de Google Maps) -->
 		</div>
 
 	
