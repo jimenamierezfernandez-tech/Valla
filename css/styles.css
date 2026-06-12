@@ -442,6 +442,13 @@ body{
   }
 }
 
+.tarjetas-grandes-eventos {
+  background: #0b0b0b;
+  border-radius: 20px;
+  padding: 28px 26px;
+  box-shadow: var(--shadow-soft);
+}
+
 .tarjeta-grande {
   color: #fff;
   background: #101010;
