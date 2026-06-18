@@ -2,25 +2,26 @@
     display: flex;
     justify-content: center;
     padding: 60px 20px;
-    width: 100%;
 }
 
-/* El formulario debe tener un ancho máximo para no deformarse */
 .formulario-valla {
     width: 100%;
-    max-width: 500px; /* Esto evita que se estire demasiado */
-    margin: 0 auto;
-}
-
-.grupo-formulario {
-    margin-bottom: 20px;
-    width: 100%;
+    max-width: 500px;
 }
 
 .grupo-formulario input {
-    width: 100%; /* Esto es clave para que no se vea chico */
-    padding: 12px 15px;
+    width: 100%;
+    padding: 12px;
     border: 2px solid #000;
     border-radius: 10px;
-    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+    box-sizing: border-box; /* Importante para que no se deforme */
+}
+
+.btn-ok {
+    background-color: #0b0b0b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
