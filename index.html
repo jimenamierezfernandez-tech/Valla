@@ -258,7 +258,25 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
   </div>
 </dialog>
 
-
+<dialog id="modalCalendario" class="modal-evento modal-calendario">
+  <div class="modal-contenido">
+    <button id="cerrarModalCal" class="btn-cerrar">✕</button>
+    
+    <div class="modal-header-cal">
+      <h2>23 DE ABRIL</h2>
+    </div>
+    
+    <div class="modal-body-cal">
+      <img src="img/serugiran.jpg" alt="Serú Girán">
+      <div class="modal-info-cal">
+        <h3>Recorda que tenés tu entrada!</h3>
+        <h4>Serú Girán</h4>
+        <p>23 de abril - 7 pm</p>
+        <p class="descripcion">Noche histórica – Serú Girán por Lebón y Aznar...</p>
+      </div>
+    </div>
+  </div>
+</dialog>
 
   <script>
   const modal = document.getElementById('modalEvento');
@@ -291,6 +309,18 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
 
   btnCerrar.addEventListener('click', () => modal.close());
 </script>
-  
+  <script>
+  const modalCal = document.getElementById('modalCalendario');
+  const btnCerrarCal = document.getElementById('cerrarModalCal');
+  const diaElegido = document.querySelector('.dia-elegido');
+
+  diaElegido.addEventListener('click', () => {
+    modalCal.showModal();
+  });
+
+  btnCerrarCal.addEventListener('click', () => {
+    modalCal.close();
+  });
+</script>
 </body>
 </html>

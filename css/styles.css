@@ -631,3 +631,31 @@ carrusel
   border-radius: 12px;   /* Opcional: para que combine con el estilo del pop-up */
   display: block;
 }
+.modal-calendario {
+  max-width: 700px;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.modal-header-cal {
+  background: #0b0b0b;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-body-cal {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.modal-body-cal img {
+  width: 40%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.modal-info-cal h3 { margin-top: 0; color: #000; }
+.descripcion { font-size: 14px; color: #333; line-height: 1.5; }
