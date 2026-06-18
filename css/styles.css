@@ -633,53 +633,24 @@ carrusel
 }
 .modal-calendario {
   max-width: 700px;
-  padding: 0;        /* Importante: quita el borde blanco del dialog */
+  padding: 0 !important; /* El !important mata cualquier otro estilo previo */
   border-radius: 20px;
+  border: none;
   overflow: hidden;
-  border: none;      /* Asegura que no haya bordes extra */
+  margin: auto; /* Centrado absoluto */
 }
 
-/* El contenedor del contenido */
+/* Forzamos al contenedor interno a no tener margen */
 .modal-contenido {
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Encabezado negro sin espacios */
 .modal-header-cal {
   background: #0b0b0b;
   color: #fff;
   padding: 24px;
-  text-align: center;
-  margin: 0;         /* Asegura que no haya margen que cree espacios */
-}
-
-/* Cuerpo con el contenido */
-.modal-body-cal {
-  display: flex;
-  padding: 24px;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-/* La imagen lateral */
-.modal-body-cal img {
-  width: 40%;
-  aspect-ratio: 1/1; /* Mantiene un formato cuadrado o rectangular fijo */
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Estilo del texto para que no se corte */
-.modal-info-cal {
-  flex: 1;
-}
-
-.descripcion {
-  font-size: 14px;
-  line-height: 1.6; /* Mejora la legibilidad */
-  color: #333;
-  margin-top: 10px;
-  white-space: normal; /* Asegura que el texto baje de renglón */
-  display: block;
+  margin: 0; /* Asegura que no empuje hacia abajo */
+  width: 100%;
 }
