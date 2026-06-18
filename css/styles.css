@@ -180,38 +180,31 @@ body{
 padding:16px 0 12px;
 }
 
-.search{
+/* Buscador */
+.busqueda-mapa {
   background:var(--gray-3);
-/* Usa la variable de gris medio (#bdbdbd) que definimos en el :root para pintar el fondo de la barra */
- border-radius:4px; /* redondea sutilmente las cuatro esquinas de la barra */
-  height:20px;
- width:100%;
- max-width:1400px;
-position:relative;
- /* Le avisa a la caja que los elementos que vayan adentro se van a posicionar de forma absoluta respecto a ella */
- opacity:.92;
+  height: 38px;
+  border-radius: 12px;
+  margin-bottom: 24px; /* Un poquito menos de margen para que no se separe tanto del mapa */
+  position: relative;
 }
-.search::before{
- /* Sirve para crear un elemento flotante por CSS adelante del contenido del HTML */
- content:"🔍";
- position:absolute;
- /* le permite flotar libremente dentro de la barra de búsqueda, ignorando el flujo normal del texto */
- left:10px;
- top:50%;
- transform:translateY(-50%);
- /* el top: 50% baja el emoji hasta la mitad de la barra, y el translateY(-50%) lo sube exactamente la mitad de su propio tamaño para que quede perfectamente alineado al centro del renglón */
- font-size:12px;
- opacity:.8;
+
+.busqueda-mapa::before {
+  content: "🔍";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
 }
-.search span{
- position:absolute;
- left:32px;
- top:50%;
- transform:translateY(-50%);
- font-size:11px;
- color:#2c2c2c;
- opacity:.85;
- user-select:none;
+
+.busqueda-mapa span {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #333; /* Color oscuro para el texto del buscador */
 }
 .titulo-seccion-calendario{
   font-size: 26px;
