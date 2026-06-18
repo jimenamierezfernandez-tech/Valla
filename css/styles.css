@@ -409,31 +409,34 @@ position:relative;
 .event-card {
     background: #ffffff;
     width: 100%;
-    max-width: 660px;           /* Evita que el cartel se estire de más */
-    border-radius: 24px;
-    overflow: hidden;           /* Clave para que la cabecera respete la curva */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    font-family: Arial, sans-serif;
+    max-width: 680px;           /* Ancho máximo calcado de tu diseño */
+    border: 12px solid #e13239; /* El marco rojo grueso */
+    border-radius: 35px;        /* Bordes bien redondeados */
+    overflow: hidden;           /* Clave para que la cabecera negra respete la curva del borde */
     box-sizing: border-box;
-    margin: 0 auto;             /* Lo centra en la pantalla */
+    font-family: Arial, sans-serif;
 }
 
-/* 2. Cabecera Negra con el estilo de líneas cruzadas Valla */
+/* Cabecera Negra */
 .event-header {
     background: #111111;
-    padding: 25px 20px;
+    padding: 24px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
+
+/* Texto del Artista */
 .event-header h2 {
     color: #ffffff;
     margin: 0;
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 700;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Se para por encima de las líneas blancas */
 }
+
+/* Líneas diagonales blancas de la marca (Efecto Valla) */
 .event-header::before,
 .event-header::after {
     content: "";
@@ -441,88 +444,84 @@ position:relative;
     background: #ffffff;
     width: 4px;
     height: 140px;
-    top: -20px;
+    top: -30px;
     z-index: 1;
 }
-.event-header::before { left: 45px; transform: rotate(22deg); }
-.event-header::after { left: 75px; transform: rotate(-22deg); }
+/* Línea inclinada a la derecha */
+.event-header::before {
+    left: 45px;
+    transform: rotate(22deg);
+}
+/* Línea inclinada a la izquierda */
+.event-header::after {
+    left: 75px;
+    transform: rotate(-22deg);
+}
 
-/* 3. EL CUERPO: Esto obliga a la foto y al texto a ponerse uno al lado del otro */
+/* Contenido interno (Columnas) */
 .event-body {
-    display: flex;              /* ARREGLA EL DESPARRAMO: Activa las dos columnas */
-    padding: 35px;
+    display: flex;
+    padding: 30px;
     background: #ffffff;
-    gap: 35px;                  /* Separación justa entre foto e info */
-    align-items: center;        /* Centra verticalmente los elementos */
-    box-sizing: border-box;
+    gap: 30px; /* Separación limpia entre imagen e info */
+    align-items: center;
 }
 
-/* 4. CONTENEDOR DE LA FOTO: Bloquea el tamaño para que no rompa nada */
+/* Contenedor e Imagen de la izquierda */
 .event-image-container {
-    flex: 0 0 220px;            /* No deja que el cuadro se deforme */
-    width: 220px;
-    height: 220px;
-    border-radius: 18px;
-    overflow: hidden;           /* Corta cualquier exceso de la foto original */
+    flex: 0 0 240px; /* Ancho fijo para mantener la proporción de la foto */
+    height: 240px;
 }
-
-/* 5. LA IMAGEN DOMADA: Se adapta obligatoriamente al contenedor de 220px */
 .event-artist-image {
-    width: 100%;                /* Se clava al ancho de su contenedor */
-    height: 100%;               /* Se clava al alto de su contenedor */
-    object-fit: cover;          /* Mantiene la proporción de la banda sin estirarse feo */
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se deforme */
+    border-radius: 20px; /* Bordes redondeados de la foto */
 }
 
-/* 6. Columna de información de la derecha */
+/* Contenedor de la información derecha */
 .event-info-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    text-align: left;           /* Alinea los textos a la izquierda */
 }
-.event-venue {
+
+/* Nombre del lugar */
+.event-info-container .event-venue {
     margin: 0 0 6px 0;
     font-size: 26px;
     font-weight: 700;
     color: #111111;
 }
-.event-date {
-    margin: 0 0 30px 0;
+
+/* Fecha y hora */
+.event-info-container .event-date {
+    margin: 0 0 35px 0;
     font-size: 16px;
     font-weight: 700;
     color: #111111;
 }
+
+/* Caja inferior de entradas */
 .event-ticket-box {
     display: flex;
     flex-direction: column;
 }
 .event-ticket-title {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: #111111;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .event-ticket-link {
     font-size: 14px;
-    color: #666666;
+    color: #555555;
     text-decoration: none;
-    word-break: break-all;      /* Si el link es largo, lo quiebra para que no desborde */
+    word-break: break-all; /* Rompe el link si es más largo que el ancho disponible */
 }
-.event-ticket-link:hover { 
-    text-decoration: underline; 
+.event-ticket-link:hover {
+    text-decoration: underline;
 }
-
-/* Responsive para celulares */
-@media (max-width: 600px) {
-    .event-body {
-        flex-direction: column; /* En pantallas chicas se apila prolijamente */
-        padding: 20px;
-        gap: 20px;
-    }
-    .event-info-container { text-align: center; }
-}
-
 
 
 .donde {
