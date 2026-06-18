@@ -28,27 +28,30 @@
       width: min(var(--container), calc(100% - 48px));
       margin: 0 auto;
     }
+.encabezado {
+    background-color: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 15px 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
 
-   <header class="encabezado">
-    <div class="orden-de-ecabezado">
-        <a class="logo-valla lugar-logo" href="index.html">
-            <img class="logo" src="img/header.png" alt="VALLA">
-            <h1 class="titulo-header-favoritos">
-                ARTISTAS FAVORITOS 
-            </h1>
-        </a>
+/* Alinear el logo y el título juntos */
+.orden-de-ecabezado {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
 
-        <div class="contenido-del-encabezado">
-            <nav class="nav">
-                <a href="index.html">Inicio</a>
-                <a href="artistas.html">Artistas</a>
-                <a href="lugares.html">Lugares</a>
-                <a href="registrarse.html">Registrarse</a>
-            </nav>
-        </div>
-    </div>
-</header>
-
+/* Asegurar que el título tenga el tamaño correcto */
+.titulo-header-favoritos {
+    color: white !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+}
     /* =========================================
        FORMULARIO REDONDEADO (COMO EN TU DISEÑO)
        ========================================= */
