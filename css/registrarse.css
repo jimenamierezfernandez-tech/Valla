@@ -73,3 +73,15 @@ header.encabezado {
     border: none;
     cursor: pointer;
 }
+.lugar-logo {
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.lugar-logo h1 {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 20px !important;
+    margin: 0 !important;
+}
