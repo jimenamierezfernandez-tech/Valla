@@ -613,3 +613,14 @@ carrusel
   transform: scale(1.5);
   transform-origin: bottom right;
 }
+.modal-evento {
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+}
+.modal-evento::backdrop { background: rgba(0,0,0,0.7); }
+.modal-contenido { display: flex; flex-direction: column; gap: 15px; }
+.btn-cerrar { align-self: flex-end; cursor: pointer; border: none; background: none; font-size: 24px; }
+#modalImg { width: 100%; border-radius: 10px; }

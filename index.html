@@ -242,8 +242,52 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
     <img src="img/foot.png" alt="" class="footer-art">
   </footer>
 
-
+<dialog id="modalEvento" class="modal-evento">
+  <div class="modal-contenido">
+    <button id="cerrarModal" class="btn-cerrar">✕</button>
+    <h2 id="modalTitulo">Nombre del Artista</h2>
+    <div class="modal-body">
+      <img id="modalImg" src="" alt="Evento">
+      <div class="modal-info">
+        <h3 id="modalLugar">Lugar</h3>
+        <p id="modalFecha">Fecha y hora</p>
+        <p><strong>Saca tu entrada!</strong></p>
+        <a id="modalLink" href="#" target="_blank">Link al sitio</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+  <script>
+  const modal = document.getElementById('modalEvento');
+  const btnCerrar = document.getElementById('cerrarModal');
   
+  // Elementos internos del modal
+  const titulo = document.getElementById('modalTitulo');
+  const img = document.getElementById('modalImg');
+  const lugar = document.getElementById('modalLugar');
+  const fecha = document.getElementById('modalFecha');
+  const link = document.getElementById('modalLink');
+
+  document.querySelectorAll('.tarjeta').forEach(tarjeta => {
+    tarjeta.addEventListener('click', () => {
+      // Extraemos info de la tarjeta clicada
+      const nombre = tarjeta.querySelector('h4').innerText;
+      const srcImg = tarjeta.querySelector('img').src;
+      const infoFecha = tarjeta.querySelector('p').innerText;
+      
+      // Asignamos los datos al modal
+      titulo.innerText = nombre;
+      img.src = srcImg;
+      fecha.innerText = infoFecha;
+      lugar.innerText = "Movistar Arena"; // Podrías tener esto en un data-attribute
+      link.href = "http://www.movistararena.com.ar/";
+      
+      modal.showModal();
+    });
+  });
+
+  btnCerrar.addEventListener('click', () => modal.close());
+</script>
   
 </body>
 </html>
