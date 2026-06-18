@@ -10,25 +10,66 @@
     margin-bottom:40px;
 }
 
-<section class="favoritos-page">
-  <div class="wrap">
+.favoritos-search{
+    width: 100%;
+    
+    /* CAMBIADO: De 700px a 1100px para que sea bastante más larga. 
+       Podés subir o bajar este número a tu gusto */
+    max-width: 1100px; 
+    
+    height: 42px;
+    border: 1px solid #999;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+    margin-bottom: 20px;
+}
 
-    <form class="favoritos-search" role="search" action="" method="GET">
-      <input 
-        type="search" 
-        name="artista" 
-        class="favoritos-search-input" 
-        placeholder="Buscar un artista" 
-        aria-label="Buscar un artista"
-        autocomplete="off"
-      >
-    </form>
+.favoritos-search::before{
+    content: "🔍";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* IMPORTANTE: Hace que el clic pase de largo directo al input */
+    pointer-events: none; 
+}
 
-    <div class="favoritos-badge">
-      Artistas favoritos
-    </div>
+/* CAMBIADO: Reemplazamos el 'span' por el input real con tus mismos estilos */
+.favoritos-search-input {
+    position: absolute;
+    left: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Mantenemos tus estilos tipográficos originales */
+    color: #777;
+    font-size: 14px;
+    
+    /* Limpieza total de los bordes y fondos por defecto del navegador */
+    background: transparent;
+    border: none;
+    outline: none;
+    width: calc(100% - 56px); /* Evita que el texto choque al final */
+    padding: 0;
+}
 
-  </div> </section>
+/* Estilo para el texto gris de fondo (placeholder) */
+.favoritos-search-input::placeholder {
+    color: #777;
+}
+
+/* Tu badge queda exactamente igual que antes */
+.favoritos-badge{
+    display: inline-block;
+    background: #bfbfbf;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
 
 .favorito-card{
     background:#ececec;
