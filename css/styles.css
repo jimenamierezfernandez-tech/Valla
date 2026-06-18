@@ -454,7 +454,7 @@ position:relative;
 
 /* Buscador */
 .busqueda-mapa {
-  background: #9c9c9c;
+  background:var(--gray-3);
   height: 38px;
   border-radius: 12px;
   margin-bottom: 24px; /* Un poquito menos de margen para que no se separe tanto del mapa */
