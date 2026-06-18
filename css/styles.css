@@ -402,38 +402,81 @@ position:relative;
   font-size: 7px;
   color: #a8a8a8;
 }
+
+
+
+
+
+
+
 /* tarjetas grandes */
+.event-modal {
+    display: none; /* <-- ARRANCA OCULTO TOTALMENTE */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55); /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Por encima de barras de navegación y el calendario */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Clase para mostrar el popup (se activa con el click) */
+.event-modal.active {
+    display: flex;
+}
+
+/* El cartel limpio (CORREGIDO: Sin borde rojo y con sombra elegante) */
 .event-card {
     background: #ffffff;
     width: 100%;
-    max-width: 680px;           /* Ancho máximo calcado de tu diseño */
-    border: 12px solid #e13239; /* El marco rojo grueso */
-    border-radius: 35px;        /* Bordes bien redondeados */
-    overflow: hidden;           /* Clave para que la cabecera negra respete la curva del borde */
+    max-width: 680px;
+    border-radius: 24px; /* Esquinas redondeadas suaves y profesionales */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-/* Cabecera Negra */
+/* Botón de cerrar (X) */
+.close-modal-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.close-modal-btn:hover {
+    color: #ff5252;
+}
+
+/* Cabecera Negra Estilo Valla */
 .event-header {
     background: #111111;
-    padding: 24px 20px;
+    padding: 28px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
-
-/* Texto del Artista */
 .event-header h2 {
     color: #ffffff;
     margin: 0;
     font-size: 36px;
     font-weight: 700;
     position: relative;
-    z-index: 2; /* Se para por encima de las líneas blancas */
+    z-index: 2;
 }
-
-/* Líneas diagonales blancas de la marca (Efecto Valla) */
 .event-header::before,
 .event-header::after {
     content: "";
@@ -441,65 +484,56 @@ position:relative;
     background: #ffffff;
     width: 4px;
     height: 140px;
-    top: -30px;
+    top: -20px;
     z-index: 1;
 }
-/* Línea inclinada a la derecha */
-.event-header::before {
-    left: 45px;
-    transform: rotate(22deg);
-}
-/* Línea inclinada a la izquierda */
-.event-header::after {
-    left: 75px;
-    transform: rotate(-22deg);
-}
+.event-header::before { left: 45px; transform: rotate(22deg); }
+.event-header::after { left: 75px; transform: rotate(-22deg); }
 
-/* Contenido interno (Columnas) */
+/* Cuerpo interno en Flexbox (Alineación horizontal estricta) */
 .event-body {
     display: flex;
-    padding: 30px;
+    padding: 35px;
     background: #ffffff;
-    gap: 30px; /* Separación limpia entre imagen e info */
+    gap: 35px;
     align-items: center;
 }
 
-/* Contenedor e Imagen de la izquierda */
+/* CONTENEDOR DE IMAGEN BLINDADO: Si la ruta falla, no rompe el texto */
 .event-image-container {
-    flex: 0 0 240px; /* Ancho fijo para mantener la proporción de la foto */
-    height: 240px;
+    flex: 0 0 220px; /* Tamaño exacto bloqueado */
+    width: 220px;
+    height: 220px;
+    background: #e0e0e0; /* Fondo gris de auxilio por si la foto no carga */
+    border-radius: 20px;
+    overflow: hidden;
 }
 .event-artist-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que la foto se deforme */
-    border-radius: 20px; /* Bordes redondeados de la foto */
+    object-fit: cover;
+    display: block;
 }
 
-/* Contenedor de la información derecha */
+/* Contenedor de la información (Alineación izquierda nativa) */
 .event-info-container {
     flex: 1;
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
-
-/* Nombre del lugar */
-.event-info-container .event-venue {
+.event-venue {
     margin: 0 0 6px 0;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: #111111;
 }
-
-/* Fecha y hora */
-.event-info-container .event-date {
-    margin: 0 0 35px 0;
-    font-size: 16px;
+.event-date {
+    margin: 0 0 32px 0;
+    font-size: 18px;
     font-weight: 700;
     color: #111111;
 }
-
-/* Caja inferior de entradas */
 .event-ticket-box {
     display: flex;
     flex-direction: column;
@@ -508,52 +542,25 @@ position:relative;
     font-size: 16px;
     font-weight: 700;
     color: #111111;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 .event-ticket-link {
     font-size: 14px;
     color: #555555;
     text-decoration: none;
-    word-break: break-all; /* Rompe el link si es más largo que el ancho disponible */
+    word-break: break-all;
 }
-.event-ticket-link:hover {
-    text-decoration: underline;
+.event-ticket-link:hover { text-decoration: underline; }
+
+/* Adaptabilidad para pantallas chicas */
+@media (max-width: 600px) {
+    .event-body {
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+    .event-info-container { text-align: center; }
 }
-/* ==========================================
-   RESPONSIVE (Actualizado con tus nombres)
-   ========================================== */
-@media (max-width: 920px) {
-  /* Pasa a 2 columnas en pantallas medianas */
-  .tarjetas { 
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-@media (max-width: 640px) {
-  /* Transforma las tarjetas en carrusel horizontal para celulares */
-  .tarjetas {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  .tarjeta {
-    min-width: 72%;
-    scroll-snap-align: start;
-  }
-}
-
-@media (max-width: 420px) {
-  /* Tarjetas un poco más anchas en celulares bien chicos */
-  .tarjeta { 
-    min-width: 82%; 
-  }
-}
-
-
-
 
 
 .donde {
