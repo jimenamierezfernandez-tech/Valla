@@ -1,27 +1,27 @@
 /* =========================================
    HEADER NEGRO (CORREGIDO PARA BANNER GRANDE)
    ========================================= */
-.encabezado {
-    background-color: #000 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 15px 40px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+.encabezado-registro {
+  background-color: #0b0b0b;
+  width: 100%;
+  padding: 0; /* Sacamos el padding para que la imagen maneje el alto natural */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Alinear el logo y el título juntos */
-.orden-de-ecabezado {
-    display: flex !important;
-    align-items: center !important;
-    gap: 20px !important;
-    width: 100% !important;
+.contenedor-logo-registro {
+  width: 100%;
+  /* Eliminamos el límite de 980px para que el banner se expanda */
+  max-width: 100%; 
+  display: flex;
+  justify-content: center;
 }
 
-/* Asegurar que el título tenga el tamaño correcto */
-.titulo-header-favoritos {
-    color: white !important;
-    margin: 0 !important;
-    font-size: 20px !important;
+.logo-bienvenida {
+  display: block;
+  width: 100%;          /* Forzamos a que ocupe todo el ancho disponible */
+  max-width: 1400px;    /* Límite para pantallas gigantes, podés subirlo si querés más grande */
+  height: auto;
+  mix-blend-mode: screen; 
 }

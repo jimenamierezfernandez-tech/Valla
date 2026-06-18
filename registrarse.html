@@ -1,35 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/registrarse.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VALLA - Registrarse</title>
+  
+  <style>
+    /* =========================================
+       RESET Y CONFIGURACIÓN GENERAL
+       ========================================= */
+    :root {
+      --container: 980px;
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .wrap {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* =========================================
+       HEADER NEGRO (COMO EN LAS CAPTURAS)
+       ========================================= */
+    .encabezado-registro {
+      background-color: #0b0b0b;
+      width: 100%;
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor-logo-registro {
+      width: 100%;
+      max-width: var(--container);
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .logo-bienvenida {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      mix-blend-mode: screen; /* Quita el fondo blanco de la imagen */
+    }
+
+    /* =========================================
+       FORMULARIO REDONDEADO (COMO EN TU DISEÑO)
+       ========================================= */
+    .contenedor-registro {
+      display: flex;
+      justify-content: center;
+      padding: 60px 0; /* Empuja el formulario abajo de la barra negra */
+    }
+
+    .formulario-valla {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .grupo-formulario {
+      margin-bottom: 24px;
+    }
+
+    .grupo-formulario label {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #0b0b0b;
+    }
+
+    .grupo-formulario input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: 2px solid #000000;
+      border-radius: 18px; /* Bordes bien redondeados */
+      outline: none;
+      background-color: #ffffff;
+    }
+
+    .grupo-formulario input::placeholder {
+      color: #888888;
+    }
+
+    /* BOTÓN SUBMIT NEGRO A LA DERECHA */
+    .bloque-boton {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .btn-ok {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-ok:hover {
+      background-color: #222222;
+      /* =========================================
+   HEADER NEGRO (CORREGIDO PARA BANNER GRANDE)
+   ========================================= */
+.encabezado-registro {
+  background-color: #0b0b0b;
+  width: 100%;
+  padding: 0; /* Sacamos el padding para que la imagen maneje el alto natural */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-logo-registro {
+  width: 100%;
+  /* Eliminamos el límite de 980px para que el banner se expanda */
+  max-width: 100%; 
+  display: flex;
+  justify-content: center;
+}
+
+.logo-bienvenida {
+  display: block;
+  width: 100%;          /* Forzamos a que ocupe todo el ancho disponible */
+  max-width: 1400px;    /* Límite para pantallas gigantes, podés subirlo si querés más grande */
+  height: auto;
+  mix-blend-mode: screen; 
+}
+    }
+  </style>
 </head>
 <body>
 
-    <header class="encabezado">
-        <div class="orden-de-ecabezado">
-            <a class="logo-valla lugar-logo" href="index.html">
-                <img class="logo" src="img/header.png" alt="VALLA">
-                <h1 class="titulo-header-favoritos">REGISTRARSE</h1>
-            </a>
-            <div class="contenido-del-encabezado">
-                <nav class="nav">
-                    <a href="index.html">Inicio</a>
-                    <a href="artistas.html">Artistas</a>
-                    <a href="lugares.html">Lugares</a>
-                    <a href="registrarse.html">Registrarse</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <header class="encabezado-registro">
+    <div class="contenedor-logo-registro">
+      <a href="index.html">
+        <img class="logo-bienvenida" src="img/logo-registrarse.png" alt="Bienvenido a VALLA" />
+      </a>
+    </div>
+  </header>
 
-    <main class="contenedor-registro">
-        <div class="formulario-valla">
-            </div>
-    </main>
+  <main class="contenedor-registro wrap">
+    <form class="formulario-valla"netlify>
+      <div class="grupo-formulario">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Escribir aquí" required />
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" name="email" placeholder="Escribir aquí" required />
+      </div>
+
+      <div class="bloque-boton">
+        <button type="submit" class="btn-ok">OK</button>
+      </div>
+
+    </form>
+  </main>
 
 </body>
 </html>
