@@ -333,5 +333,23 @@ Será una noche emotiva y poderosa, un encuentro entre generaciones para celebra
     modalCal.close();
   });
 </script>
+<script>
+  const btnLeerMas = document.getElementById('btnLeerMas');
+const textoCorto = document.getElementById('textoCorto');
+const textoCompleto = document.getElementById('textoCompleto');
+
+btnLeerMas.addEventListener('click', () => {
+  if (textoCompleto.style.display === 'none') {
+    textoCompleto.style.display = 'inline';
+    textoCorto.style.display = 'none';
+    btnLeerMas.innerText = 'Leer menos';
+  } else {
+    textoCompleto.style.display = 'none';
+    textoCorto.style.display = 'inline';
+    btnLeerMas.innerText = 'Leer más';
+  }
+});
+</script>
+
 </body>
 </html>
