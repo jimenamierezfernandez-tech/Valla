@@ -232,7 +232,6 @@ body{
   width: min(580px, 100%); /* Esto hace que no se estire de punta a punta */
   margin: 16px auto 26px;  /* Centra la caja en la pantalla */
   background: #fff;
-  transform: scale(1.2px);
 }
 
 .cal-header {
@@ -246,6 +245,7 @@ body{
   font-size: 9px;
   letter-spacing: .5px;
   text-transform: uppercase;
+  transform: scale(1.2px);
 }
 
 /* Estilo general para ambas flechas */
