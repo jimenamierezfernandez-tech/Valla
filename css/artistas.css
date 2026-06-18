@@ -10,59 +10,44 @@
     margin-bottom:40px;
 }
 
-.favoritos-search {
-    width: 100%;
-    max-width: 1100px; /* El largo que querías */
-    height: 42px;
-    border: 1px solid #999;
-    border-radius: 12px;
-    background: #fff;
-    margin-bottom: 20px;
-
-    /* LA MAGIA: Flexbox alinea la lupa y el input en fila automáticamente */
-    display: flex;
-    align-items: center;
-    padding-left: 14px; /* Despega la lupa del borde izquierdo */
-    box-sizing: border-box;
+.favoritos-search{
+    width:100%;
+    max-width:700px;
+    height:42px;
+    border:1px solid #999;
+    border-radius:12px;
+    background:#fff;
+    position:relative;
+    margin-bottom:20px;
 }
 
-/* La lupa ahora es un elemento fijo en la fila, no flota */
-.favoritos-search-icon {
-    font-size: 15px;
-    margin-right: 12px; /* Empuja el texto hacia la derecha de forma segura */
-    user-select: none;
+.favoritos-search::before{
+    content:"🔍";
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
 }
 
-/* El input llena todo el espacio que queda libre a la derecha */
-.favoritos-search-input {
-    flex: 1; /* Ocupa el 100% del ancho restante */
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    
-    /* Tus estilos de texto */
-    color: #777;
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
+.favoritos-search span{
+    position:absolute;
+    left:42px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777;
+    font-size:14px;
 }
 
-/* Estilo para el placeholder */
-.favoritos-search-input::placeholder {
-    color: #777;
+.favoritos-badge{
+    display:inline-block;
+    background:#bfbfbf;
+    color:#fff;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:20px;
 }
 
-/* Tu botón gris intacto */
-.favoritos-badge {
-    display: inline-block;
-    background: #bfbfbf;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
 .favorito-card{
     background:#ececec;
     border-radius:12px;
