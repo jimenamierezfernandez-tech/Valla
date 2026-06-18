@@ -299,17 +299,16 @@ body{
 .dia-elegido {
   background: #0b0b0b;
   color: #fff;
-  margin: 0 auto; /* Centrado horizontal */
+  border-radius: 50%; /* Círculo perfecto */
   
-  /* MODIFICACIONES PARA HACERLO CUADRADO REDONDEADO CONTENIDO */
+  /* 2. IGUALÁ ALTO Y ANCHO: Ajustá estos dos valores al tamaño que más te guste */
+  width: 38px;        
+  height: 38px;       
+  margin: 0 auto;     /* Centrado horizontal */
   
-  /* 1. CAMBIAR FORMA: Pasamos de border-radius: 50% (círculo) a un radio moderado (cuadrado redondeado) */
-  border-radius: 12px; /* Un radio de esquina moderado, similar al del banner gris */
-  
-  /* 2. IGUALAR TAMAÑO Y CONTENERLO: Hacemos que sea simétrico y no se extienda horizontalmente */
-  width: 44px;         /* Ancho contenido dentro de su columna Jueves */
-  height: 44px;        /* Igualamos el alto al ancho para forma cuadrada */
-  line-height: 44px;   /* Debe coincidir con height para centrar el texto verticalmente */
+  /* 3. LIMPIEZA: Seteá el padding superior en 0 para que no tire el número hacia abajo */
+  padding-top: 0;     
+  line-height: 38px;  /* Debe coincidir con el height para centrar el texto si no usa flex */
   
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
