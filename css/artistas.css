@@ -11,43 +11,59 @@
 }
 
 .favoritos-search{
-    width:100%;
-    max-width:700px;
-    height:42px;
-    border:1px solid #999;
-    border-radius:12px;
-    background:#fff;
-    position:relative;
-    margin-bottom:20px;
+    width: 100%;
+    max-width: 1100px; /* El largo que te gustó */
+    height: 42px;
+    border: 1px solid #999;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .favoritos-search::before{
-    content:"🔍";
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
+    content: "🔍";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* El clic pasa de largo al input */
+    font-size: 15px;      /* Tamaño ideal para la lupa */
 }
 
-.favoritos-search span{
-    position:absolute;
-    left:42px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#777;
-    font-size:14px;
+/* Selector infalible para el campo de texto */
+.favoritos-search input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    
+    /* LA SOLUCIÓN: box-sizing evita que se deforme y el padding-left empuja el texto post-lupa */
+    box-sizing: border-box; 
+    padding-left: 44px;  /* Espacio justo para que empiece después del emoji */
+    padding-right: 16px;
+    
+    /* Tus estilos de texto originales */
+    color: #777;
+    font-size: 14px;
 }
 
+/* Estilo para el placeholder */
+.favoritos-search input::placeholder {
+    color: #777;
+}
+
+/* Tu botón gris queda intacto */
 .favoritos-badge{
-    display:inline-block;
-    background:#bfbfbf;
-    color:#fff;
-    padding:8px 16px;
-    border-radius:20px;
-    font-size:13px;
-    margin-bottom:20px;
+    display: inline-block;
+    background: #bfbfbf;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
-
 .favorito-card{
     background:#ececec;
     border-radius:12px;
