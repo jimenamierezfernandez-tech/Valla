@@ -1,61 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VALLA - Registrarse</title>
-  
-  <style>
-    /* =========================================
-       RESET Y CONFIGURACIÓN GENERAL
-       ========================================= */
-    :root {
-      --container: 980px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares Favoritos</title>
+	<link rel="stylesheet" href="css/styles.css">	
+    <link rel="stylesheet" href="css/lugares.css">
+</head>
 
-    * { 
-      box-sizing: border-box; 
-      margin: 0;
-      padding: 0;
-    }
+<body>
 
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #ffffff;
-    }
+<header class="encabezado">
+    <div class="orden-de-ecabezado">
+        <a class="logo-valla lugar-logo" href="index.html">
+            <img class="logo" src="logo-registrarse.png" alt="VALLA">
+			<h1 class="titulo-header-favoritos">
+			REGISTRARSE
+			</h1>
+        </a>
 
-    .wrap {
-      width: min(var(--container), calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    /* =========================================
-       HEADER NEGRO (COMO EN LAS CAPTURAS)
-       ========================================= */
-    .encabezado-registro {
-      background-color: #0b0b0b;
-      width: 100%;
-      padding: 24px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .contenedor-logo-registro {
-      width: 100%;
-      max-width: var(--container);
-      display: flex;
-      justify-content: center;
-      padding: 0 24px;
-    }
-
-    .logo-bienvenida {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      mix-blend-mode: screen; /* Quita el fondo blanco de la imagen */
-    }
-
+        <div class="contenido-del-encabezado">
+            <nav class="nav">
+				<a href="index.html" class="btn-iniciar-sesion">Inicio</a>
+				<a href="artistas.html" class="artistas-favoritos">Artistas</a>
+				<a href="lugares.html" class="lugares-favoritos">Lugares</a>
+				<a href="registrarse.html" class="btn-iniciar-sesion">Registrarse</a>
+            </nav>
+        </div>
+    </div>
+</header>
     /* =========================================
        FORMULARIO REDONDEADO (COMO EN TU DISEÑO)
        ========================================= */
