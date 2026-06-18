@@ -229,48 +229,36 @@ body{
   border: 1px solid #9c9c9c;
   border-radius: 10px;
   overflow: hidden;
-  width: min(580px, 100%); /* Esto hace que no se estire de punta a punta */
-  margin: 16px auto 26px;  /* Centra la caja en la pantalla */
+  /* 1. Subimos el ancho máximo para que iguale a la sección de abajo (ej. 1000px) */
+  width: min(1000px, 100%); 
+  margin: 16px auto 32px;  /* El margen vuelve a la normalidad */
   background: #fff;
-  margin: 16px auto 120px;  
-
-  /* 2. AGREGÁ ESTAS DOS LÍNEAS */
-  transform: scale(1.6);       /* Proba con 1.3, 1.4 o 1.5 hasta que estire como querés */
-  transform-origin: top center; /* Clave para que se estire desde el centro superior */
 }
-
 
 .cal-header {
   background: var(--gray-2);
-  padding: 7px 12px;
+  padding: 14px 20px; /* <-- Más alto */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;     /* Necesario para que las flechas se alineen respecto a esta barra */
+  position: relative;     
   font-weight: 750;
-  font-size: 9px;
+  font-size: 14px; /* <-- Subió de 9px */
   letter-spacing: .5px;
   text-transform: uppercase;
 }
 
-/* Estilo general para ambas flechas */
 .cal-header .flecha {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
+  font-size: 18px; /* <-- Más grande */
   opacity: .9;
   cursor: pointer;
 }
 
-/* Cada una a su esquina correspondiente */
-.cal-header .flecha-izq {
-  left: 12px;
-}
-
-.cal-header .flecha-der {
-  right: 12px;
-}
+.cal-header .flecha-izq { left: 20px; }
+.cal-header .flecha-der { right: 20px; }
 
 .cal-dias {
   display: grid;
@@ -278,8 +266,8 @@ body{
   background: #efefef;
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
-  font-size: 8px;
-  padding: 6px 10px;
+  font-size: 13px; /* <-- Subió de 8px */
+  padding: 10px;
   text-align: center;
   color:#111;
 }
@@ -287,36 +275,33 @@ body{
 .cal-grilla {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  padding: 12px 10px 14px;
-  gap: 10px 0;
-  font-size: 8px;
+  padding: 20px 15px;
+  gap: 16px 0; /* <-- Más separación entre filas de días */
+  font-size: 14px; /* <-- Subió de 8px */
   text-align: center;
-  min-height: 180px;
+  min-height: 280px; 
 }
 
 .dia {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 18px;
+  height: 36px; /* <-- Más alto para que respire el número */
   color: #111;
 }
 
-.dia-invicible { 
-  color: #aaa; 
-}
+.dia-invicible { color: #aaa; }
 
+/* El día seleccionado ahora pasa a ser un círculo perfecto */
 .dia-elegido {
   background: #0b0b0b;
   color: #fff;
-  border-radius: 999px;
-  width: 44px;
-  margin: 0 auto;
-  height: 12px;
-  line-height: 12px;
-  font-size: 7px;
-  padding-top: 1px;
-  box-shadow: 0 2px 0 rgba(0,0,0,.35);
+  border-radius: 50%; /* <-- Círculo perfecto */
+  width: 36px;        /* <-- Mismo ancho que alto */
+  height: 36px;
+  line-height: 36px;
+  font-size: 13px;   /* <-- Subió de 7px */
+  box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 /* =========================
    EVENTS
