@@ -9,32 +9,35 @@
 </head>
 <body>
 
-<header class="encabezado" style="background-color: black; padding: 20px 40px; display: flex; align-items: center;">
-    <div class="orden-de-ecabezado" style="display: flex; align-items: center; width: 100%;">
-        <a class="logo-valla" href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-            <img class="logo" src="img/header.png" alt="VALLA" style="height: 40px;">
-            <h1 class="titulo-header-favoritos" style="color: white; font-size: 22px; margin: 0;">REGISTRARSE</h1>
+<header class="encabezado">
+    <div class="orden-de-ecabezado">
+        <a class="logo-valla lugar-logo" href="index.html">
+            <img class="logo" src="img/header.png" alt="VALLA">
+            <h1 class="titulo-header-favoritos">REGISTRARSE</h1>
         </a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="artistas.html">Artistas</a>
+            <a href="lugares.html">Lugares</a>
+            <a href="registrarse.html">Registrarse</a>
+        </nav>
     </div>
 </header>
 
-<main class="contenedor-registro wrap">
+<main class="contenedor-registro">
     <form class="formulario-valla" netlify>
         <div class="grupo-formulario">
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" placeholder="Escribir aquí" required />
         </div>
-
         <div class="grupo-formulario">
             <label for="email">Gmail:</label>
             <input type="email" id="email" name="email" placeholder="Escribir aquí" required />
         </div>
-
         <div class="bloque-boton">
             <button type="submit" class="btn-ok">OK</button>
         </div>
     </form>
 </main>
-
 </body>
 </html>
