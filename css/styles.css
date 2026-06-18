@@ -114,8 +114,6 @@ body{
 }
 
 
-
-
 /* Estilos para convertir el enlace en un botón */
 .artistas-favoritos {
   display: inline-block;
@@ -234,6 +232,7 @@ body{
   width: min(580px, 100%); /* Esto hace que no se estire de punta a punta */
   margin: 16px auto 26px;  /* Centra la caja en la pantalla */
   background: #fff;
+  transform: scale(1.2px);
 }
 
 .cal-header {
