@@ -242,26 +242,52 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
     <img src="img/foot.png" alt="" class="footer-art">
   </footer>
 
-<dialog id="modalEvento" class="modal-evento">
-  <div class="modal-contenido">
-    <button id="cerrarModal" class="btn-cerrar">✕</button>
-    <h2 id="modalTitulo">Nombre del Artista</h2>
-    <div class="modal-body">
-      <img id="modalImg" src="" alt="Evento">
-      <div class="modal-info">
-        <h3 id="modalLugar">Lugar</h3>
-        <p id="modalFecha">Fecha y hora</p>
-        <p><strong>Saca tu entrada!</strong></p>
-        <a id="modalLink" href="#" target="_blank">Link al sitio</a>
-      </div>
-    </div>
+<article class="tarjeta" data-lugar="Movistar Arena" data-link="http://www.movistararena.com.ar/">
+  <div class="miniaturas">
+    <img src="img/dreamtheater.jpg" alt="Dream Theater" loading="lazy" />
   </div>
-</dialog>
-  <script>
+  <div class="cuerpo-tarjeta">
+    <h4>Dream Theater</h4>
+    <p>24 de abril • 9 pm</p>
+    <div class="meta">Teatro / Rock</div>
+  </div>
+</article>
+
+<article class="tarjeta" data-lugar="Estadio Mario Kempes" data-link="http://www.q-lokura.com.ar/">
+  <div class="miniaturas">
+    <img src="img/qlocura.png" alt="Q’ LOKURA" loading="lazy" />
+  </div>
+  <div class="cuerpo-tarjeta">
+    <h4>Q’ LOKURA</h4>
+    <p>25 de abril • 9 pm</p>
+    <div class="meta">Cuarteto / Vivo</div>
+  </div>
+</article>
+<article class="tarjeta" data-lugar="Movistar Arena" data-link="http://www.movistararena.com.ar/">
+  <div class="miniaturas">
+    <img src="img/dreamtheater.jpg" alt="Dream Theater" loading="lazy" />
+  </div>
+  <div class="cuerpo-tarjeta">
+    <h4>Dream Theater</h4>
+    <p>24 de abril • 9 pm</p>
+    <div class="meta">Teatro / Rock</div>
+  </div>
+</article>
+
+<article class="tarjeta" data-lugar="Estadio Mario Kempes" data-link="http://www.q-lokura.com.ar/">
+  <div class="miniaturas">
+    <img src="img/qlocura.png" alt="Q’ LOKURA" loading="lazy" />
+  </div>
+  <div class="cuerpo-tarjeta">
+    <h4>Q’ LOKURA</h4>
+    <p>25 de abril • 9 pm</p>
+    <div class="meta">Cuarteto / Vivo</div>
+  </div>
+</article>
+ <script>
   const modal = document.getElementById('modalEvento');
   const btnCerrar = document.getElementById('cerrarModal');
   
-  // Elementos internos del modal
   const titulo = document.getElementById('modalTitulo');
   const img = document.getElementById('modalImg');
   const lugar = document.getElementById('modalLugar');
@@ -270,17 +296,14 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
 
   document.querySelectorAll('.tarjeta').forEach(tarjeta => {
     tarjeta.addEventListener('click', () => {
-      // Extraemos info de la tarjeta clicada
-      const nombre = tarjeta.querySelector('h4').innerText;
-      const srcImg = tarjeta.querySelector('img').src;
-      const infoFecha = tarjeta.querySelector('p').innerText;
+      // 1. Obtenemos datos de la tarjeta clickeada
+      titulo.innerText = tarjeta.querySelector('h4').innerText;
+      img.src = tarjeta.querySelector('img').src;
+      fecha.innerText = tarjeta.querySelector('p').innerText;
       
-      // Asignamos los datos al modal
-      titulo.innerText = nombre;
-      img.src = srcImg;
-      fecha.innerText = infoFecha;
-      lugar.innerText = "Movistar Arena"; // Podrías tener esto en un data-attribute
-      link.href = "http://www.movistararena.com.ar/";
+      // 2. Obtenemos los datos personalizados (data-attributes)
+      lugar.innerText = tarjeta.dataset.lugar; 
+      link.href = tarjeta.dataset.link;
       
       modal.showModal();
     });
