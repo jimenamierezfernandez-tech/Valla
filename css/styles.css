@@ -276,17 +276,22 @@ body{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   padding: 20px 15px;
-  gap: 16px 0; /* <-- Más separación entre filas de días */
-  font-size: 14px; /* <-- Subió de 8px */
+  
+  /* 1. SEPARAR FILAS: Subimos de 16px a 28px el espacio vertical entre semanas */
+  gap: 28px 0; 
+  
+  font-size: 14px;
   text-align: center;
-  min-height: 280px; 
+  min-height: 280px;
 }
 
 .dia {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 36px; /* <-- Más alto para que respire el número */
+  
+  /* 2. MÁS ALTURA: Pasamos de 36px a 46px para que cada número tenga más aire arriba y abajo */
+  height: 46px; 
   color: #111;
 }
 
@@ -296,11 +301,16 @@ body{
 .dia-elegido {
   background: #0b0b0b;
   color: #fff;
-  border-radius: 50%; /* <-- Círculo perfecto */
-  width: 36px;        /* <-- Mismo ancho que alto */
-  height: 36px;
-  line-height: 36px;
-  font-size: 13px;   /* <-- Subió de 7px */
+  border-radius: 50%;
+  
+  /* 3. AGRANDAR BOTÓN: Subimos el círculo a 46px para que acompañe el nuevo tamaño de la celda */
+  width: 46px;  
+  height: 46px;
+  line-height: 46px;
+  
+  /* Opcional: Podés subir un punto el tamaño del número elegido si querés que resalte más */
+  font-size: 14px; 
+  
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 /* =========================
