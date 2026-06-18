@@ -232,7 +232,13 @@ body{
   width: min(580px, 100%); /* Esto hace que no se estire de punta a punta */
   margin: 16px auto 26px;  /* Centra la caja en la pantalla */
   background: #fff;
+  margin: 16px auto 120px;  
+
+  /* 2. AGREGÁ ESTAS DOS LÍNEAS */
+  transform: scale(1.4);       /* Proba con 1.3, 1.4 o 1.5 hasta que estire como querés */
+  transform-origin: top center; /* Clave para que se estire desde el centro superior */
 }
+
 
 .cal-header {
   background: var(--gray-2);
