@@ -442,70 +442,8 @@ body{
   }
 }
 
-.tarjetas-grandes-eventos {
-  background: #0b0b0b;
-  border-radius: 20px;
-  padding: 28px 26px;
-  box-shadow: var(--shadow-soft);
-}
 
-.tarjeta-grande {
-  color: #fff;
-  background: #101010;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset;
-  cursor: pointer; /* Devuelve la manito del mouse */
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.miniaturas {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  background: #222;
-  overflow: hidden;
-}
 
-.miniaturas img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: saturate(1.05) contrast(1.05);
-  transform: scale(2);
-}
-
-.miniaturas::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
-  pointer-events: none;
-}
-
-.cuerpo-tarjeta {
-  padding: 10px 10px 12px;
-}
-
-.tarjeta h4 {
-  margin: 0 0 4px;
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: .2px;
-  color: #fff;
-}
-
-.tarjeta p {
-  margin: 0;
-  font-size: 8px;
-  color: #d6d6d6;
-  line-height: 1.35;
-}
-
-.meta {
-  margin-top: 6px;
-  font-size: 7px;
-  color: #a8a8a8;
-}
 
 
 .donde {
@@ -574,9 +512,7 @@ body{
   font-weight: 800;
   margin-bottom: 20px;
 }
-.fancybox__slide.has-iframe .f-html {
-  padding: 0;
-}
+
 /* Grilla de 4 columnas para computadoras */
 .artistas {
   display: grid;
@@ -720,31 +656,4 @@ carrusel
 
   transform: scale(1.5);
   transform-origin: bottom right;
-}
-/* =========================================
-   HEADER NEGRO (CORREGIDO PARA BANNER GRANDE)
-   ========================================= */
-.encabezado-registro {
-  background-color: #0b0b0b;
-  width: 100%;
-  padding: 0; /* Sacamos el padding para que la imagen maneje el alto natural */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenedor-logo-registro {
-  width: 100%;
-  /* Eliminamos el límite de 980px para que el banner se expanda */
-  max-width: 100%; 
-  display: flex;
-  justify-content: center;
-}
-
-.logo-bienvenida {
-  display: block;
-  width: 100%;          /* Forzamos a que ocupe todo el ancho disponible */
-  max-width: 1400px;    /* Límite para pantallas gigantes, podés subirlo si querés más grande */
-  height: auto;
-  mix-blend-mode: screen; 
 }
