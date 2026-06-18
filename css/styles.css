@@ -405,116 +405,123 @@ position:relative;
 
   
 /* tarjetas grandes */
-TARJETA DE EVENTO (MODAL) - CODIGO BLINDADO
-   ========================================== */
-
 .event-card {
-    background: #ffffff !important;
-    width: 100% !important;
-    max-width: 660px !important;
-    border-radius: 24px !important;
-    overflow: hidden !important;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
-    font-family: Arial, sans-serif !important;
-    box-sizing: border-box !important;
-    margin: 20px auto !important;
+    background: #ffffff;
+    width: 100%;
+    max-width: 660px;           /* Evita que el cartel se estire de más */
+    border-radius: 24px;
+    overflow: hidden;           /* Clave para que la cabecera respete la curva */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;             /* Lo centra en la pantalla */
 }
 
+/* 2. Cabecera Negra con el estilo de líneas cruzadas Valla */
 .event-header {
-    background: #111111 !important;
-    padding: 25px 20px !important;
-    text-align: center !important;
-    position: relative !important;
-    overflow: hidden !important;
+    background: #111111;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
-
 .event-header h2 {
-    color: #ffffff !important;
-    margin: 0 !important;
-    font-size: 34px !important;
-    font-weight: 700 !important;
+    color: #ffffff;
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
 }
+.event-header::before,
+.event-header::after {
+    content: "";
+    position: absolute;
+    background: #ffffff;
+    width: 4px;
+    height: 140px;
+    top: -20px;
+    z-index: 1;
+}
+.event-header::before { left: 45px; transform: rotate(22deg); }
+.event-header::after { left: 75px; transform: rotate(-22deg); }
 
+/* 3. EL CUERPO: Esto obliga a la foto y al texto a ponerse uno al lado del otro */
 .event-body {
-    display: flex !important;         /* Fuerza las dos columnas */
-    flex-direction: row !important;    /* Obliga a ir de izquierda a derecha */
-    padding: 35px !important;
-    background: #ffffff !important;
-    gap: 35px !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
+    display: flex;              /* ARREGLA EL DESPARRAMO: Activa las dos columnas */
+    padding: 35px;
+    background: #ffffff;
+    gap: 35px;                  /* Separación justa entre foto e info */
+    align-items: center;        /* Centra verticalmente los elementos */
+    box-sizing: border-box;
 }
 
+/* 4. CONTENEDOR DE LA FOTO: Bloquea el tamaño para que no rompa nada */
 .event-image-container {
-    flex: 0 0 220px !important;       /* Bloquea el ancho del contenedor */
-    width: 220px !important;
-    height: 220px !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
+    flex: 0 0 220px;            /* No deja que el cuadro se deforme */
+    width: 220px;
+    height: 220px;
+    border-radius: 18px;
+    overflow: hidden;           /* Corta cualquier exceso de la foto original */
 }
 
+/* 5. LA IMAGEN DOMADA: Se adapta obligatoriamente al contenedor de 220px */
 .event-artist-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;     /* Evita que la foto se estire feo */
-    display: block !important;
+    width: 100%;                /* Se clava al ancho de su contenedor */
+    height: 100%;               /* Se clava al alto de su contenedor */
+    object-fit: cover;          /* Mantiene la proporción de la banda sin estirarse feo */
+    display: block;
 }
 
+/* 6. Columna de información de la derecha */
 .event-info-container {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;           /* Alinea los textos a la izquierda */
 }
-
 .event-venue {
-    margin: 0 0 6px 0 !important;
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    color: #111111 !important;
+    margin: 0 0 6px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111111;
 }
-
 .event-date {
-    margin: 0 0 30px 0 !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    color: #111111 !important;
+    margin: 0 0 30px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
 }
-
 .event-ticket-box {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column;
 }
-
 .event-ticket-title {
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    color: #111111 !important;
-    margin-bottom: 4px !important;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 4px;
 }
-
 .event-ticket-link {
-    font-size: 14px !important;
-    color: #666666 !important;
-    text-decoration: none !important;
-    word-break: break-all !important;
+    font-size: 14px;
+    color: #666666;
+    text-decoration: none;
+    word-break: break-all;      /* Si el link es largo, lo quiebra para que no desborde */
 }
-
 .event-ticket-link:hover { 
-    text-decoration: underline !important; 
+    text-decoration: underline; 
 }
 
-/* Ajuste responsive para celulares */
+/* Responsive para celulares */
 @media (max-width: 600px) {
     .event-body {
-        flex-direction: column !important;
-        padding: 20px !important;
-        gap: 20px !important;
+        flex-direction: column; /* En pantallas chicas se apila prolijamente */
+        padding: 20px;
+        gap: 20px;
     }
-    .event-info-container { 
-        text-align: center !important; 
-    }
+    .event-info-container { text-align: center; }
 }
+
 
 
 .donde {
