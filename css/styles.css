@@ -409,7 +409,6 @@ position:relative;
     background: #ffffff;
     width: 100%;
     max-width: 680px;           /* Ancho máximo calcado de tu diseño */
-    border: 12px solid #e13239; /* El marco rojo grueso */
     border-radius: 35px;        /* Bordes bien redondeados */
     overflow: hidden;           /* Clave para que la cabecera negra respete la curva del borde */
     box-sizing: border-box;
