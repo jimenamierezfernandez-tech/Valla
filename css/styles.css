@@ -176,7 +176,7 @@ body{
 /* =========================
    SEARCH + TITLES
    ========================= */
-..search-row{
+.search-row{
 padding:16px 0 12px;
 }
 
