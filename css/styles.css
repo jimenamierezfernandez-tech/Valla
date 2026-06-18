@@ -113,11 +113,8 @@ body{
   transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave para el hover */
 }
 
-/* Efecto al pasar el mouse por encima (hover) */
-.artistas-favoritos:hover {
-  background-color: #0b0b0b; /* Se pone un poco más claro/oscuro */
-  transform: translateY(-2px); /* Da la sensación de que el botón se levanta un poquito */
-}
+
+
 
 /* Estilos para convertir el enlace en un botón */
 .artistas-favoritos {
