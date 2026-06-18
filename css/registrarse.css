@@ -2,36 +2,26 @@
    HEADER NEGRO (CORREGIDO PARA BANNER GRANDE)
    ========================================= */
 .encabezado {
-    background-color: black;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 15px 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
+/* Alinear el logo y el título juntos */
 .orden-de-ecabezado {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
 }
 
-.logo-valla {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    gap: 15px;
-}
-
+/* Asegurar que el título tenga el tamaño correcto */
 .titulo-header-favoritos {
-    font-size: 24px;
-    margin: 0;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
+    color: white !important;
+    margin: 0 !important;
+    font-size: 20px !important;
 }
