@@ -55,3 +55,35 @@
     border: none;
     cursor: pointer;
 }
+/* Layout del formulario */
+.contenedor-registro {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.formulario-valla {
+    width: 100%;
+    max-width: 500px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.btn-ok {
+    background-color: #0b0b0b;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
