@@ -9,11 +9,35 @@ header.encabezado {
     width: 100%;
 }
 
-.encabezado .nav a {
+.encabezado {
+    background-color: #0b0b0b;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Empuja logo a la izquierda y menú a la derecha */
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.orden-de-ecabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
     color: white !important;
     text-decoration: none !important;
     font-weight: bold;
-    margin-left: 20px;
+    font-size: 16px;
 }
 
 /* --- Formulario --- */
