@@ -31,12 +31,26 @@
 </header>
 
 <section class="favoritos-page">
-    <div class="wrap">
+  <div class="wrap">
 
-        <div class="favoritos-search">
-            <span>Buscar un artista</span>
-        </div>
+    <form class="favoritos-search" role="search" action="" method="GET">
+      <span class="favoritos-search-icon">🔍</span>
+      <input 
+        type="search" 
+        name="artista" 
+        class="favoritos-search-input" 
+        placeholder="Buscar un artista" 
+        aria-label="Buscar un artista"
+        autocomplete="off"
+      >
+    </form>
 
+    <div class="favoritos-badge">
+      Artistas favoritos
+    </div>
+
+  </div>
+</section>
         <div class="favoritos-badge">
             Artistas favoritos
         </div>
