@@ -521,39 +521,6 @@ position:relative;
 .event-ticket-link:hover {
     text-decoration: underline;
 }
-/* ==========================================
-   RESPONSIVE (Actualizado con tus nombres)
-   ========================================== */
-@media (max-width: 920px) {
-  /* Pasa a 2 columnas en pantallas medianas */
-  .tarjetas { 
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-@media (max-width: 640px) {
-  /* Transforma las tarjetas en carrusel horizontal para celulares */
-  .tarjetas {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  .tarjeta {
-    min-width: 72%;
-    scroll-snap-align: start;
-  }
-}
-
-@media (max-width: 420px) {
-  /* Tarjetas un poco más anchas en celulares bien chicos */
-  .tarjeta { 
-    min-width: 82%; 
-  }
-}
-
 
 
 

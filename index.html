@@ -169,34 +169,31 @@
     });
   </script>
   <!-- tarjetas grandes -->
-  <div id="modal-evento" class="event-modal">
+   <div class="event-card">
   
-  <div class="event-card">
-    <button class="close-modal-btn" id="cerrar-modal">&times;</button>
+  <div class="event-header">
+    <h2>Dream Theater</h2>
+  </div>
+  
+  <div class="event-body">
     
-    <div class="event-header">
-      <h2>Dream Theater</h2>
+    <div class="event-image-container">
+      <img src="ruta-a-tu-foto-de-dream-theater.jpg" alt="Dream Theater" class="event-artist-image">
     </div>
     
-    <div class="event-body">
+    <div class="event-info-container">
+      <h3 class="event-venue">Movistar Arena</h3>
+      <p class="event-date">24 de abril - 9 pm</p>
       
-      <div class="event-image-container">
-        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500" alt="Dream Theater" class="event-artist-image" id="event-img">
+      <div class="event-ticket-box">
+        <span class="event-ticket-title">Saca tu entrada!</span>
+        <a href="http://www.movistararena.com.ar/" target="_blank" class="event-ticket-link">
+          http://www.movistararena.com.ar/
+        </a>
       </div>
-      
-      <div class="event-info-container">
-        <h3 class="event-venue">Movistar Arena</h3>
-        <p class="event-date">24 de abril - 9 pm</p>
-        
-        <div class="event-ticket-box">
-          <span class="event-ticket-title">Saca tu entrada!</span>
-          <a href="http://www.movistararena.com.ar/" target="_blank" class="event-ticket-link">
-            http://www.movistararena.com.ar/
-          </a>
-        </div>
-      </div>
-      
-    </div> </div> </div>
+    </div>
+    
+  </div> </div>
   <!-- =========================
 	SECCIÓN: ¿A dónde queda?
 	========================= -->
@@ -269,35 +266,9 @@ Cada año, el 11/11, lanza un nuevo álbum, reinventandose, descubriendo sonidos
   <footer class="footer">
     <img src="img/foot.png" alt="" class="footer-art">
   </footer>
-<script>
-// 1. Seleccionamos el modal y la X de cierre
-const modal = document.getElementById('modal-evento');
-const botonCerrar = document.getElementById('cerrar-modal');
 
-// 2. Buscamos la tarjeta de Dream Theater abajo en tus recomendados.
-// TIP: Si tu tarjeta contenedora tiene otra clase, cambiala acá.
-const tarjetaDreamTheater = document.querySelector('.eventos-interesar-card, .card'); 
 
-// 3. Al tocar la tarjeta, se le agrega la clase 'active' para que aparezca
-if(tarjetaDreamTheater) {
-    tarjetaDreamTheater.addEventListener('click', () => {
-        modal.classList.add('active');
-    });
-}
-
-// 4. Al tocar la X, se remueve la clase y se oculta de nuevo
-botonCerrar.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita conflictos de clicks
-    modal.classList.remove('active');
-});
-
-// 5. Opcional: Si tocan el fondo negro, también se cierra
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
-  </script>
+  
   
 </body>
 </html>
