@@ -1,29 +1,19 @@
-.encabezado {
-    background-color: #0b0b0b !important;
-    padding: 20px 40px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+/* --- Header específico para la página de registro --- */
+/* Usamos el selector específico para no romper otros headers */
+header.encabezado {
+    background-color: #0b0b0b;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.orden-de-ecabezado {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-}
-
-.nav {
-    display: flex !important;
-    gap: 25px !important;
-}
-
-.nav a {
+.encabezado .nav a {
     color: white !important;
     text-decoration: none !important;
-    font-weight: bold !important;
+    font-weight: bold;
+    margin-left: 20px;
 }
 
 /* --- Formulario --- */
@@ -31,35 +21,7 @@
     display: flex;
     justify-content: center;
     padding: 60px 20px;
-}
-
-.formulario-valla {
     width: 100%;
-    max-width: 500px;
-}
-
-.grupo-formulario input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #000;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-.btn-ok {
-    background-color: #0b0b0b;
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-/* Layout del formulario */
-.contenedor-registro {
-    display: flex;
-    justify-content: center;
-    padding: 60px 20px;
 }
 
 .formulario-valla {
@@ -76,7 +38,7 @@
     padding: 12px;
     border: 2px solid #000;
     border-radius: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Esto evita que el input se deforme */
 }
 
 .btn-ok {
