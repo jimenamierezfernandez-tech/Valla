@@ -405,40 +405,115 @@ position:relative;
 
   
 /* tarjetas grandes */
+TARJETA DE EVENTO (MODAL) - CODIGO BLINDADO
+   ========================================== */
+
 .event-card {
-    background: #ffffff;
-    width: 100%;
-    max-width: 660px;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    margin: 0 auto;
+    background: #ffffff !important;
+    width: 100% !important;
+    max-width: 660px !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+    font-family: Arial, sans-serif !important;
+    box-sizing: border-box !important;
+    margin: 20px auto !important;
+}
+
+.event-header {
+    background: #111111 !important;
+    padding: 25px 20px !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.event-header h2 {
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-size: 34px !important;
+    font-weight: 700 !important;
 }
 
 .event-body {
-    display: flex !important; /* El !important fuerza a que se arme en dos columnas si algo lo pisaba */
-    padding: 35px;
-    background: #ffffff;
-    gap: 35px;
-    align-items: center;
-    box-sizing: border-box;
+    display: flex !important;         /* Fuerza las dos columnas */
+    flex-direction: row !important;    /* Obliga a ir de izquierda a derecha */
+    padding: 35px !important;
+    background: #ffffff !important;
+    gap: 35px !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
 }
 
 .event-image-container {
-    flex: 0 0 220px;
-    width: 220px;
-    height: 220px;
-    border-radius: 18px;
-    overflow: hidden;
+    flex: 0 0 220px !important;       /* Bloquea el ancho del contenedor */
+    width: 220px !important;
+    height: 220px !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
 }
 
 .event-artist-image {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover;
-    display: block;
+    object-fit: cover !important;     /* Evita que la foto se estire feo */
+    display: block !important;
+}
+
+.event-info-container {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+}
+
+.event-venue {
+    margin: 0 0 6px 0 !important;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+}
+
+.event-date {
+    margin: 0 0 30px 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+}
+
+.event-ticket-box {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.event-ticket-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    margin-bottom: 4px !important;
+}
+
+.event-ticket-link {
+    font-size: 14px !important;
+    color: #666666 !important;
+    text-decoration: none !important;
+    word-break: break-all !important;
+}
+
+.event-ticket-link:hover { 
+    text-decoration: underline !important; 
+}
+
+/* Ajuste responsive para celulares */
+@media (max-width: 600px) {
+    .event-body {
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 20px !important;
+    }
+    .event-info-container { 
+        text-align: center !important; 
+    }
 }
 
 
