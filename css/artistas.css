@@ -10,43 +10,25 @@
     margin-bottom:40px;
 }
 
-.favoritos-search{
-    width:100%;
-    max-width:700px;
-    height:42px;
-    border:1px solid #999;
-    border-radius:12px;
-    background:#fff;
-    position:relative;
-    margin-bottom:20px;
-}
+<section class="favoritos-page">
+  <div class="wrap">
 
-.favoritos-search::before{
-    content:"🔍";
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
-}
+    <form class="favoritos-search" role="search" action="" method="GET">
+      <input 
+        type="search" 
+        name="artista" 
+        class="favoritos-search-input" 
+        placeholder="Buscar un artista" 
+        aria-label="Buscar un artista"
+        autocomplete="off"
+      >
+    </form>
 
-.favoritos-search span{
-    position:absolute;
-    left:42px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#777;
-    font-size:14px;
-}
+    <div class="favoritos-badge">
+      Artistas favoritos
+    </div>
 
-.favoritos-badge{
-    display:inline-block;
-    background:#bfbfbf;
-    color:#fff;
-    padding:8px 16px;
-    border-radius:20px;
-    font-size:13px;
-    margin-bottom:20px;
-}
+  </div> </section>
 
 .favorito-card{
     background:#ececec;
