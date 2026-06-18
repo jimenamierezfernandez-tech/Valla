@@ -11,16 +11,16 @@
 }
 
 .favoritos-search{
-    width:100%;
-    max-width:700px;
-    height:42px;
-    border:1px solid #999;
-    border-radius:12px;
-    background:#fff;
-    position:relative;
-    margin-bottom:20px;
+    width: 100%;
+    /* max-width: 700px;  <-- BORRÁ O COMENTÁ ESTA LÍNEA */
+    box-sizing: border-box; /* <-- AGREGÁ ESTA LÍNEA */
+    height: 42px;
+    border: 1px solid #999;
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+    margin-bottom: 20px;
 }
-
 .favoritos-search::before{
     content:"🔍";
     position:absolute;
