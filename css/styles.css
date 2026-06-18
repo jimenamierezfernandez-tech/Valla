@@ -624,3 +624,10 @@ carrusel
 .modal-contenido { display: flex; flex-direction: column; gap: 15px; }
 .btn-cerrar { align-self: flex-end; cursor: pointer; border: none; background: none; font-size: 24px; }
 #modalImg { width: 100%; border-radius: 10px; }
+#modalImg {
+  width: 100%;           /* Ocupa todo el ancho del modal */
+  height: 300px;         /* Fijamos una altura fija para todas */
+  object-fit: cover;     /* La imagen se recorta para llenar el espacio sin deformarse */
+  border-radius: 12px;   /* Opcional: para que combine con el estilo del pop-up */
+  display: block;
+}
