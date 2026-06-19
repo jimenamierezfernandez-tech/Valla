@@ -30,6 +30,7 @@
 			<a href="lugares.html" class="lugares-favoritos">Lugares</a>
 			<a href="registrarse.html" class="btn-iniciar-sesion">Registrarse</a>
         </nav>
+        
       </div>
     </div> <div class="wrap mobile-nav" id="mobileNav">
       <a href="#">Iniciar Sesión</a>
@@ -279,16 +280,7 @@ David Lebón y Pedro Aznar se reúnen para revivir los clásicos de Serú Gi
   </div>
 </dialog>
 
-<p class="descripcion">
-  <span id="textoCorto">Noche histórica...</span>
-  <span id="textoCompleto" style="display:none;">
-   en la historia de la música.
-No será un simple homenaje, sino el reencuentro con un repertorio que sigue latiendo con la misma intensidad que el primer día. 
-La vigencia de Serú Girán se reafirmó en 2025 con su presentación ante 150 mil personas en el Quilmes Rock y con su paso por el Festival Cordillera de Bogotá. Ahora, en el Movistar Arena, volverán a sonar clásicos eternos como “Canción de Alicia en el país”, “Seminare”, “Esperando nacer”, “Perro Andaluz” y muchos más.
-Será una noche emotiva y poderosa, un encuentro entre generaciones para celebrar canciones que siguen vivas en la memoria del público. No es solo un concierto: es una cita con la historia grande del rock argentino. 
-  </span>
-  <button id="btnLeerMas" style="background:none; border:none; color:blue; cursor:pointer;">Leer más</button>
-</p>
+
   <script>
   const modal = document.getElementById('modalEvento');
   const btnCerrar = document.getElementById('cerrarModal');
@@ -333,23 +325,7 @@ Será una noche emotiva y poderosa, un encuentro entre generaciones para celebra
     modalCal.close();
   });
 </script>
-<script>
-  const btnLeerMas = document.getElementById('btnLeerMas');
-const textoCorto = document.getElementById('textoCorto');
-const textoCompleto = document.getElementById('textoCompleto');
 
-btnLeerMas.addEventListener('click', () => {
-  if (textoCompleto.style.display === 'none') {
-    textoCompleto.style.display = 'inline';
-    textoCorto.style.display = 'none';
-    btnLeerMas.innerText = 'Leer menos';
-  } else {
-    textoCompleto.style.display = 'none';
-    textoCorto.style.display = 'inline';
-    btnLeerMas.innerText = 'Leer más';
-  }
-});
-</script>
 
 </body>
 </html>

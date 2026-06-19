@@ -1,43 +1,85 @@
-/* --- Header específico para la página de registro --- */
-/* Usamos el selector específico para no romper otros headers */
-header.encabezado {
-    background-color: #0b0b0b;
-    padding: 20px 40px;
+.header-favoritos{
+    width:100%;
+}
+
+.header-banner{
+    width:100%;
+    display:block;
+}
+
+/* Achicar un poco el logo */
+.logo {
+  height: 99.99px;
+}
+
+/* ==================================
+   TITULO SOBRE BANNER NEGRO
+   ================================== */
+
+.encabezado{
+    display:flex;
+    align-items:flex-end;
+    background:#0b0b0b;
+}
+
+.header-banner{
+    display:block;
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration:none; /* Si no se pone esto el encabezado queda subrayado */
+}
+
+.titulo-header-registrarse{
+    margin:35px 0 20px 0;
+    color:#fff;
+    font-size:35px;
+    font-weight:700;
+    line-height:1;
+}
+
+.nav-registrarse {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    gap: 40px;
 }
 
-.encabezado {
-    background-color: #0b0b0b;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between; /* Empuja logo a la izquierda y menú a la derecha */
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+.nav-registrarse .link-registro {
+    color: #fff;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 700;
+    transition: opacity .3s ease;
 }
 
-.orden-de-ecabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.nav-registrarse .link-registro:hover {
+    opacity: .7;
 }
 
-.nav {
-    display: flex;
-    gap: 25px;
+/* Tablet */
+@media (max-width: 992px) {
+    .nav-registrarse {
+        gap: 24px;
+    }
+
+    .nav-registrarse .link-registro {
+        font-size: 1.1rem;
+    }
 }
 
-.nav a {
-    color: white !important;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 16px;
+/* Celular */
+@media (max-width: 768px) {
+    .nav-registrarse {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-registrarse .link-registro {
+        font-size: 1rem;
+    }
 }
 
 /* --- Formulario --- */
@@ -72,16 +114,4 @@ header.encabezado {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-}
-.lugar-logo {
-    text-decoration: none !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.lugar-logo h1 {
-    color: white !important;
-    text-decoration: none !important;
-    font-size: 20px !important;
-    margin: 0 !important;
 }
