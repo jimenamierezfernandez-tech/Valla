@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lugares Favoritos</title>
-	<link rel="stylesheet" href="css/styles.css">	
+    <!-- Asegurate de que los nombres de los archivos CSS coincidan con tu carpeta -->
+    <link rel="stylesheet" href="css/styles.css">   
     <link rel="stylesheet" href="css/lugares.css">
 </head>
-
 <body>
 
 <header class="encabezado">
     <div class="orden-de-ecabezado">
         <a class="logo-valla lugar-logo" href="index.html">
             <img class="logo" src="img/header.png" alt="VALLA">
-			<h1 class="titulo-header-favoritos">
-				LUGARES FAVORITOS
-			</h1>
+            <h1 class="titulo-header-favoritos">LUGARES FAVORITOS</h1>
         </a>
 
         <div class="contenido-del-encabezado">
@@ -30,61 +28,90 @@
     </div>
 </header>
 
-
 <section class="favoritos-page">
     <div class="wrap">
 
         <div class="favoritos-search">
-            <span>Buscar un lugar</span>
+            <input type="text" id="busqueda-lugares" placeholder="Buscar un lugar...">
         </div>
 
         <div class="favoritos-badge">
             Lugares favoritos
         </div>
 
-        <div class="favorito-card lugar">
-            <img src="img/movistararena.jpg" alt="Movistar Arena">
-
-            <div class="favorito-info">
-                <h3>Movistar Arena</h3>
-                <p>
-                    Humboldt 450, C1414CTS CABA<br>
-                    Ciudad Autónoma de Buenos Aires<br>
-                    https://www.movistararena.com.ar
-                </p>
+        <!-- Lista de Tarjetas -->
+        <div id="lista-lugares">
+            <div class="favorito-card lugar">
+                <img src="img/movistararena.jpg" alt="Movistar Arena">
+                <div class="favorito-info">
+                    <h3>Movistar Arena</h3>
+                    <p>Humboldt 450, C1414CTS CABA<br>Ciudad Autónoma de Buenos Aires<br>https://www.movistararena.com.ar</p>
+                </div>
+                <div class="favorito-star">★</div>
             </div>
 
-            <div class="favorito-star">★</div>
-        </div>
-
-        <div class="favorito-card lugar">
-            <img src="img/granrex.jpg" alt="Gran Rex">
-
-            <div class="favorito-info">
-                <h3>Teatro Gran Rex</h3>
-                <p>
-                    Av. Corrientes 857, C1043AAI<br>
-                    Ciudad Autónoma de Buenos Aires<br>
-                    https://teatro-granrex.com.ar
-                </p>
+            <div class="favorito-card lugar">
+                <img src="img/granrex.jpg" alt="Gran Rex">
+                <div class="favorito-info">
+                    <h3>Teatro Gran Rex</h3>
+                    <p>Av. Corrientes 857, C1043AAI<br>Ciudad Autónoma de Buenos Aires<br>https://teatro-granrex.com.ar</p>
+                </div>
+                <div class="favorito-star">★</div>
             </div>
 
-            <div class="favorito-star">★</div>
-        </div>
-
-        <div class="favorito-card lugar">
-            <img src="img/cartmedia.jpg" alt="C Art Media">
-
-            <div class="favorito-info">
-                <h3>C Art Media</h3>
-                <p>
-                    Av. Corrientes 6271, C1427 CABA<br>
-                    Ciudad Autónoma de Buenos Aires<br>
-                    https://www.cconex.org
-                </p>
+            <div class="favorito-card lugar">
+                <img src="img/cartmedia.jpg" alt="C Art Media">
+                <div class="favorito-info">
+                    <h3>C Art Media</h3>
+                    <p>Av. Corrientes 6271, C1427 CABA<br>Ciudad Autónoma de Buenos Aires<br>https://www.cconex.org</p>
+                </div>
+                <div class="favorito-star">★</div>
             </div>
 
-            <div class="favorito-star">★</div>
+            <div class="favorito-card lugar">
+                <img src="img/monumental.jpg" alt="Estadio Mâs Monumental">
+                <div class="favorito-info">
+                    <h3>Estadio Mâs Monumental</h3>
+                    <p>Av. Pres. Figueroa Alcorta 7597, C1424BCL<br>Ciudad Autónoma de Buenos Aires<br>https://www.cariverplate.com.ar/</p>
+                </div>
+                <div class="favorito-star">★</div>
+            </div>
+
+            <div class="favorito-card lugar">
+                <img src="img/velez.jpg" alt="Estadio Vélez">
+                <div class="favorito-info">
+                    <h3>Estadio Vélez Sarsfield</h3>
+                    <p>Av. Juan Bautista Justo 9200, C1408AKU<br>Ciudad Autónoma de Buenos Aires<br>https://www.velez.com.ar/club/estadio</p>
+                </div>
+                <div class="favorito-star">★</div>
+            </div>
+
+            <div class="favorito-card lugar">
+                <img src="img/obras.png" alt="Estadio Obras">
+                <div class="favorito-info">
+                    <h3>Estadio Obras Sanitarias</h3>
+                    <p>Av. del Libertador 7395, C1429 Cdad.<br>Ciudad Autónoma de Buenos Aires<br>https://estadioobras.com.ar/</p>
+                </div>
+                <div class="favorito-star">★</div>
+            </div>
+
+            <div class="favorito-card lugar">
+                <img src="img/niceto.jpg" alt="Niceto Club">
+                <div class="favorito-info">
+                    <h3>Niceto Club</h3>
+                    <p>Cnel. Niceto Vega 5510, C1414BFD <br>Ciudad Autónoma de Buenos Aires<br>http://www.nicetoclub.com/</p>
+                </div>
+                <div class="favorito-star">★</div>
+            </div>
+
+            <div class="favorito-card lugar">
+                <img src="img/luna.avif" alt="Luna Park">
+                <div class="favorito-info">
+                    <h3>Luna Park</h3>
+                    <p>Av. Eduardo Madero 470, C1106 <br>Ciudad Autónoma de Buenos Aires<br>https://www.lunapark.com.ar/</p>
+                </div>
+                <div class="favorito-star">★</div>
+            </div>
         </div>
 
     </div>
@@ -93,6 +120,19 @@
 <footer class="footer">
     <img src="img/foot.png" alt="" class="footer-art">
 </footer>
+
+<script>
+    const inputBusqueda = document.getElementById('busqueda-lugares');
+    const tarjetasLugares = document.querySelectorAll('.favorito-card.lugar');
+
+    inputBusqueda.addEventListener('input', () => {
+        const texto = inputBusqueda.value.toLowerCase();
+        tarjetasLugares.forEach(card => {
+            const nombreLugar = card.querySelector('h3').innerText.toLowerCase();
+            card.style.display = nombreLugar.includes(texto) ? "" : "none";
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -1,19 +1,21 @@
-.favoritos-page{
-    background:#f5f5f5;
-    min-height:100vh;
-    padding:40px 0 80px;
+.favoritos-page {
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 40px 0 80px;
 }
 
-.favoritos-titulo{
-    font-size:48px;
-    font-weight:900;
-    margin-bottom:40px;
+.favoritos-titulo {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 40px;
 }
 
-.favoritos-search{
+/* ==================================
+   BARRA DE BÚSQUEDA
+   ================================== */
+.favoritos-search {
     width: 100%;
-    /* max-width: 700px;  <-- BORRÁ O COMENTÁ ESTA LÍNEA */
-    box-sizing: border-box; /* <-- AGREGÁ ESTA LÍNEA */
+    box-sizing: border-box; 
     height: 42px;
     border: 1px solid #999;
     border-radius: 12px;
@@ -21,148 +23,138 @@
     position: relative;
     margin-bottom: 20px;
 }
-.favoritos-search::before{
-    content:"🔍";
-    position:absolute;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
+
+
+.favoritos-search input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 42px;
+    padding-right: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    border-radius: 12px;
 }
 
-.favoritos-search span{
-    position:absolute;
-    left:42px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#777;
-    font-size:14px;
+.favoritos-search input::placeholder {
+    color: #777;
 }
 
-.favoritos-badge{
-    display:inline-block;
-    background:#bfbfbf;
-    color:#fff;
-    padding:8px 16px;
-    border-radius:20px;
-    font-size:13px;
-    margin-bottom:20px;
+/* ==================================
+   TARJETAS Y BADGES
+   ================================== */
+.favoritos-badge {
+    display: inline-block;
+    background: #bfbfbf;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
-.favorito-card{
-    background:#ececec;
-    border-radius:12px;
-    padding:16px;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    margin-bottom:18px;
+.favorito-card {
+    background: #ececec;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
 }
 
-.favorito-card img{
-    width:95px;
-    height:95px;
-    border-radius:50%;
-    object-fit:cover;
+.favorito-card img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.favorito-card.lugar img{
-    width:95px;
-    height:95px;
-    border-radius:10px;
+.favorito-card.lugar img {
+    width: 95px;
+    height: 95px;
+    border-radius: 10px;
 }
 
-.favorito-info{
-    flex:1;
+.favorito-info {
+    flex: 1;
 }
 
-.favorito-info h3{
-    margin:0 0 8px;
-    font-size:32px;
-    font-weight:800;
+.favorito-info h3 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 800;
 }
 
-.favorito-info p{
-    margin:0;
-    font-size:12px;
-    color:#555;
-    line-height:1.4;
+.favorito-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
 }
 
-.favorito-star{
-    font-size:28px;
-    color:#888;
-    cursor:pointer;
+.favorito-star {
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
 }
 
-.favorito-star:hover{
-    color:#f5b301;
+.favorito-star:hover {
+    color: #f5b301;
 }
 
-@media(max-width:768px){
-
-    .favoritos-titulo{
-        font-size:32px;
+@media(max-width: 768px) {
+    .favoritos-titulo {
+        font-size: 32px;
     }
 
-    .favorito-card{
-        flex-direction:column;
-        text-align:center;
+    .favorito-card {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .favorito-info h3{
-        font-size:24px;
+    .favorito-info h3 {
+        font-size: 24px;
     }
 }
 
 /* ==================================
    HEADER FAVORITOS
    ================================== */
-
-   /* Achicar un poco el logo */
 .logo {
-  height: 99.99px;
+    height: 99.99px;
 }
 
-
-.encabezado{
-    background:#0b0b0b;
+.encabezado {
+    display: flex;
+    align-items: flex-end;
+    background: #0b0b0b;
 }
 
-.header-favoritos{
-    width:100%;
+.header-favoritos {
+    width: 100%;
 }
 
-.header-banner{
-    width:100%;
-    display:block;
+.header-banner {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
-/* ==================================
-   TITULO SOBRE BANNER NEGRO
-   ================================== */
-
-.encabezado{
-    display:flex;
-    align-items:flex-end;
-    background:#0b0b0b;
+a {
+    text-decoration: none; 
 }
 
-.header-banner{
-    display:block;
-    margin:0;
-    padding:0;
-}
-
-a{
-    text-decoration:none; /* Si no se pone esto el encabezado queda subrayado */
-}
-
-.titulo-header-favoritos{
-    margin:35px 0 20px 0;
-    color:#fff;
-    font-size:35px;
-    font-weight:700;
-    line-height:1;
+.titulo-header-favoritos {
+    margin: 35px 0 20px 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .nav-registrarse {

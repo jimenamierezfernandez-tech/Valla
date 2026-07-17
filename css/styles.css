@@ -190,14 +190,7 @@ body{
   /* Eliminé el opacity que tenía para que el gris sea idéntico */
 }
 
-.search::before {
-  content: "🔍";
-  position: absolute;
-  left: 14px; /* Separado un poquito más del borde (era 10px) */
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px; /* Icono más grande para igualar */
-}
+
 
 .search span {
   position: absolute;
@@ -423,14 +416,7 @@ body{
   position: relative;
 }
 
-.busqueda-mapa::before {
-  content: "🔍";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-}
+
 
 .busqueda-mapa span {
   position: absolute;

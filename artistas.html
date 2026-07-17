@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artistas Favoritos</title>
-	<link rel="stylesheet" href="css/styles.css">	
+    <link rel="stylesheet" href="css/styles.css">   
     <link rel="stylesheet" href="css/artistas.css">
 </head>
 
@@ -14,9 +14,9 @@
     <div class="orden-de-ecabezado">
         <a class="logo-valla lugar-logo" href="index.html">
             <img class="logo" src="img/header.png" alt="VALLA">
-			<h1 class="titulo-header-favoritos">
-				ARTISTAS FAVORITOS
-			</h1>
+            <h1 class="titulo-header-favoritos">
+                ARTISTAS FAVORITOS
+            </h1>
         </a>
 
         <div class="contenido-del-encabezado">
@@ -33,52 +33,117 @@
 <section class="favoritos-page">
     <div class="wrap">
 
+        <!-- BARRA DE BÚSQUEDA ACTUALIZADA -->
         <div class="favoritos-search">
-            <span>Buscar un artista</span>
+            <input type="text" id="buscador-artistas" placeholder="Buscar un artista...">
         </div>
 
         <div class="favoritos-badge">
             Artistas favoritos
         </div>
 
+        <!-- TARJETAS DE ARTISTAS -->
         <div class="favorito-card">
             <img src="img/myketowers.jpg" alt="Myke Towers">
-
             <div class="favorito-info">
                 <h3>Myke Towers</h3>
                 <p>DE GIRA</p>
             </div>
-
             <div class="favorito-star">★</div>
         </div>
 
-        <div class="favorito-card">
-            <img src="img/badbunny.jpg" alt="Bad Bunny">
+<div class="favorito-card">
+            <!-- Agregado el img/ antes del nombre -->
+            <img src="img/babasonicos.jpg" alt="Babasónicos"> 
 
             <div class="favorito-info">
-                <h3>Bad Bunny</h3>
-            </div>
-
-            <div class="favorito-star">★</div>
-        </div>
-
-        <div class="favorito-card">
-            <img src="img/wos.jpg" alt="Wos">
-
-            <div class="favorito-info">
-                <h3>Wos</h3>
+                <h3>Babasónicos</h3>
                 <p>DE GIRA</p>
             </div>
-
             <div class="favorito-star">★</div>
         </div>
 
+        <div class="favorito-card">
+            <!-- Agregado el img/ -->
+            <img src="img/miranda.jpg" alt="Miranda!">
+
+            <div class="favorito-info">
+                <h3>Miranda!</h3>
+            </div>
+            <div class="favorito-star">★</div>
+        </div>
+
+        <div class="favorito-card">
+            <!-- Agregado el img/ -->
+            <img src="img/ozuna.jpg" alt="Ozuna">
+
+            <div class="favorito-info">
+                <h3>Ozuna</h3>
+                <p>DE GIRA</p>
+            </div>
+            <div class="favorito-star">★</div>
+        </div>
+        
+        <div class="favorito-card">
+            <!-- Agregado el img/ -->
+            <img src="img/romeo.jfif" alt="Romeo Santos">
+
+            <div class="favorito-info">
+                <h3>Romeo Santos</h3>
+                <p>DE GIRA</p>
+            </div>
+            <div class="favorito-star">★</div>
+        </div>
+
+        <div class="favorito-card">
+            <!-- Agregado el img/ -->
+            <img src="img/pablo.webp" alt="Pablo Chill-E">
+
+            <div class="favorito-info">
+                <h3>Pablo Chill-E</h3>
+            </div>
+            <div class="favorito-star">★</div>
+        </div>
+
+        <div class="favorito-card">
+            <!-- Agregado el img/ -->
+            <img src="img/daddy_yankee.jfif" alt="Daddy Yankee">
+
+            <div class="favorito-info">
+                <h3>Daddy Yankee</h3>
+                <p>DE GIRA</p>
+            </div>
+            <div class="favorito-star">★</div>
+        </div>
     </div>
 </section>
 
 <footer class="footer">
     <img src="img/foot.png" alt="" class="footer-art">
 </footer>
+
+<!-- SCRIPT PARA QUE LA BARRA FILTRE LOS ARTISTAS -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const buscador = document.getElementById("buscador-artistas");
+        const tarjetas = document.querySelectorAll(".favorito-card");
+
+        buscador.addEventListener("input", (evento) => {
+            const textoBuscado = evento.target.value.toLowerCase();
+
+            tarjetas.forEach(tarjeta => {
+                const nombreArtista = tarjeta.querySelector("h3").textContent.toLowerCase();
+                
+                // Si coincide el texto, mostramos la tarjeta como "flex" (tu diseño original). Si no, la ocultamos.
+                if (nombreArtista.includes(textoBuscado)) {
+                    tarjeta.style.display = "flex";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
