@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="css/styles.css" />
   <!-- vincula este archivo html con el archivo css -->
 </head>
+
+<script>
+const buscadorEventos = document.getElementById("buscadorEventos");
+
+buscadorEventos.addEventListener("input", () => {
+  const texto = buscadorEventos.value.toLowerCase();
+
+  document.querySelectorAll(".tarjeta").forEach(tarjeta => {
+    const nombre = tarjeta.querySelector("h4")
+      .textContent
+      .toLowerCase();
+
+    tarjeta.style.display =
+      nombre.includes(texto) ? "block" : "none";
+  });
+});
+</script>
+
 <body>
   <header class="encabezado">
     <div class="orden-de-ecabezado">
@@ -44,9 +62,15 @@
     <section class="search-row">
       <div class="wrap">
         <!-- se encarga de que la barra de búsqueda no se choque contra los bordes de la pantalla -->
-        <div class="search" role="search" aria-label="Buscar">
-          <span>Buscar</span>
-        </div>
+		
+		<div class="search" role="search" aria-label="Buscar">
+			<input
+				type="text"
+				id="buscadorEventos"
+				placeholder="Buscar artista o evento..."
+			>
+		</div>
+		
         <h2 class="titulo-seccion-calendario">Tu Calendario</h2>	  
 		  <div class="calendario calendar" aria-label="Calendario">
   
@@ -180,14 +204,45 @@
 	
 		<!-- buscador -->
 		<div class="busqueda-mapa">
-		<span>Buscar un lugar</span>
+		  <input
+			type="text"
+			id="buscarLugar"
+			placeholder="Buscar un lugar"
+		  >
 		</div>
 	
 		<!-- mapa -->
 		<div class="mapa">
 		<iframe
 			src="https://www.google.com/maps?q=Buenos+Aires&output=embed"
-			loading="lazy">
+			loading="lazy"> 
+			
+		<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+		  const buscarLugar = document.getElementById("buscarLugar");
+		  const mapa = document.getElementById("mapaFrame");
+
+		  buscarLugar.addEventListener("keydown", (e) => {
+
+			if (e.key === "Enter") {
+
+			  e.preventDefault();
+
+			  const lugar = encodeURIComponent(
+				buscarLugar.value.trim()
+			  );
+
+			  mapa.src =
+				`https://www.google.com/maps?q=${lugar}&output=embed`;
+			}
+
+		  });
+
+		});
+		</script>	
+			
+			
       <!-- Con esto, el mapa solo se descarga cuando el usuario baja hasta esta sección. -->
 		</iframe>
     <!--iframe mete una página web externa (en este caso, el mapa de Google Maps) -->
