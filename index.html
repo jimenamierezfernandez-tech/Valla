@@ -11,23 +11,6 @@
   <!-- vincula este archivo html con el archivo css -->
 </head>
 
-<script>
-const buscadorEventos = document.getElementById("buscadorEventos");
-
-buscadorEventos.addEventListener("input", () => {
-  const texto = buscadorEventos.value.toLowerCase();
-
-  document.querySelectorAll(".tarjeta").forEach(tarjeta => {
-    const nombre = tarjeta.querySelector("h4")
-      .textContent
-      .toLowerCase();
-
-    tarjeta.style.display =
-      nombre.includes(texto) ? "block" : "none";
-  });
-});
-</script>
-
 <body>
   <header class="encabezado">
     <div class="orden-de-ecabezado">
@@ -213,35 +196,10 @@ buscadorEventos.addEventListener("input", () => {
 	
 		<!-- mapa -->
 		<div class="mapa">
-		<iframe
+		  <iframe
+			id="mapaFrame"
 			src="https://www.google.com/maps?q=Buenos+Aires&output=embed"
-			loading="lazy"> 
-			
-		<script>
-		document.addEventListener("DOMContentLoaded", () => {
-
-		  const buscarLugar = document.getElementById("buscarLugar");
-		  const mapa = document.getElementById("mapaFrame");
-
-		  buscarLugar.addEventListener("keydown", (e) => {
-
-			if (e.key === "Enter") {
-
-			  e.preventDefault();
-
-			  const lugar = encodeURIComponent(
-				buscarLugar.value.trim()
-			  );
-
-			  mapa.src =
-				`https://www.google.com/maps?q=${lugar}&output=embed`;
-			}
-
-		  });
-
-		});
-		</script>	
-			
+			loading="lazy">
 			
       <!-- Con esto, el mapa solo se descarga cuando el usuario baja hasta esta sección. -->
 		</iframe>
@@ -383,4 +341,66 @@ David Lebón y Pedro Aznar se reúnen para revivir los clásicos de Serú Gi
 
 
 </body>
+
+<script>
+	const buscadorEventos = document.getElementById("buscadorEventos");
+	if (buscadorEventos) {
+		buscadorEventos.addEventListener("input", () => {
+			const texto = buscadorEventos.value.toLowerCase();
+			document.querySelectorAll(".tarjeta").forEach(tarjeta => {
+				const nombre = tarjeta
+					.querySelector("h4")
+					.textContent
+					.toLowerCase();
+				tarjeta.style.display =
+					nombre.includes(texto) ? "" : "none";
+			});
+		});
+	}
+	
+	buscadorEventos.addEventListener("input", () => {
+	const texto = buscadorEventos.value.toLowerCase();
+	
+	document.querySelectorAll(".tarjeta").forEach(tarjeta => {
+		const nombre = tarjeta.querySelector("h4")
+		.textContent
+		.toLowerCase();
+	
+		tarjeta.style.display =
+		nombre.includes(texto) ? "block" : "none";
+	});
+	});
+</script>
+
+<script>
+console.log("SCRIPT MAPA CARGADO");
+
+const buscarLugar = document.getElementById("buscarLugar");
+const mapa = document.getElementById("mapaFrame");
+
+console.log("Input:", buscarLugar);
+console.log("Mapa:", mapa);
+
+if (buscarLugar && mapa) {
+
+  buscarLugar.addEventListener("keydown", (e) => {
+
+    console.log("Tecla:", e.key);
+
+    if (e.key === "Enter") {
+
+      const lugar = encodeURIComponent(buscarLugar.value);
+
+      console.log("Buscando:", lugar);
+
+      mapa.src =
+        `https://www.google.com/maps?q=${lugar}&output=embed`;
+    }
+  });
+
+} else {
+  console.error("No se encontró buscarLugar o mapaFrame");
+}
+</script>
+
 </html>
